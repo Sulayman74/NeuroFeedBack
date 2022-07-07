@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: center;
+    h1 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: 500;
+        text-decoration: underline palegoldenrod; 
+        transition: all 0.5s ease;
+        &:hover {
+            transform: scale(1.05);
+            color: aquamarine;
+            text-decoration: underline gold dashed; 
+        }
+    }
+    
+}
