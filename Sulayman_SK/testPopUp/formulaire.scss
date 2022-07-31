@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(to right top, #022b88, #39c7ce, white);
+  padding: 0 20px;
+  .image {
+    width: 50%;
+    // background-color: pink;
+    display: flex;
+    justify-content: center;
+    img {
+      margin-top: 20px;
+      aspect-ratio: 4/5;
+      height: 700px;
+    }
+  }
+  .formulaire {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    .contact {
+      display: flex;
+      width: 70%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // align-content: flex-start;
+      label {
+        align-self: start;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+      input {
+        padding: 10px 350px 10px 5px;
+        margin-bottom: 15px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        background-color: transparent;
+      }
+      textarea {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 18px;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: rosybrown;
+      }
+      button {
+        padding: 10px 20px;
+        text-align: center;
+        border: 1px solid black;
+        background: transparent;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border-radius: 5px;
+        font-size: 1.1em;
+        color: #fff;
+        box-shadow: 0 3px 10px rgb(0, 0, 0, 0.3);
+        cursor: pointer;
+        align-self: end;
+        transform: translateX(-30%);
+        transition: all 0.3s linear;
+        &:hover {
+          color: #022b88;
+          background-color: whitesmoke;
+          box-shadow: 0 3px 10px #022b88;
+        }
+      }
+    }
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+}
+
+#date {
+  border: none;
+  align-self: flex-start;
+  //   margin-left: 10px;
+  font-size: 1.2em;
+  background-color: transparent;
+}

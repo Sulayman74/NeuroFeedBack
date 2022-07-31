@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="formulaire.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Contactez-nous</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Formulaire de prise de rendez-vous</h1>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="image">
+          <img src="assets/sante2.jpg.webp" alt="" />
+        </div>
+        <section class="formulaire">
+          <form class="contact" action="">
+            <label for="nom">Nom</label>
+            <input id="nom" type="text" placeholder="Votre Nom" />
+            <label for="prenom">Prénom</label>
+            <input id="prenom" type="text" placeholder="Votre Prénom" />
+            <label for="e-mail">E-mail</label>
+            <input id="e-mail" type="mail" placeholder="Votre adresse@mail" />
+            <input id="date" type="date" min="2022-01-01" max="2022-12-31" />
+            <textarea
+              placeholder="Dites-nous pourquoi vous nous écrivez"
+              id="message"
+              cols="50"
+              rows="10"
+            ></textarea>
+            <button id="boutonSend">Envoyez</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer></footer>
+    <script src=""></script>
+  </body>
+</html>

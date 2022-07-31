@@ -94,7 +94,18 @@ header {
   align-items: center;
   // flex-direction: column;
   min-height: 100vh;
-  // background: linear-gradient(75deg, #022b88, #39c7ce);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(1, 1, 1, 0.3));
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(assets/jerene-nov-2020-mental_health-123rf.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
   .card {
     &:hover .ImgBox {
       width: 200px;
@@ -109,8 +120,8 @@ header {
     position: relative;
     max-width: 350px;
     min-width: 300px;
-    // height: 190px;
-    height: 20vh;
+
+    height: 24vh;
     background: white;
     border: 3px solid #39c7ce;
     border-radius: 15px;
@@ -202,31 +213,30 @@ header {
           outline: none;
           font-family: "Poppins Medium";
           border-radius: 3px;
-          color: whitesmoke;
+          color: #022b88;
           cursor: pointer;
           box-shadow: 1px 2px 5px #39c7ce;
           transition: all 0.3s linear;
+          a {
+            text-decoration: none;
+            color: #022b88;
+          }
           &:hover {
             transform: scale(1.04);
             border: 1px solid #39c7ce;
           }
           &:nth-child(1) {
             &:hover {
+              background-color: #022b88;
+              color: white;
               ~ button {
-                background-color: #022b88;
-                color: white;
+                transform: scale(1.04);
+                border: 1px solid #39c7ce;
               }
-              background-color: #fff;
-              color: #022b88;
             }
-            background-color: #022b88;
           }
           &:nth-child(2) {
-            // &:hover {
-            //   background-color: #fff;
-            //   color: #022b88;
-            // }
-            color: #022b88;
+            color: white;
           }
         }
       }
@@ -443,7 +453,7 @@ header {
       color: whitesmoke;
       transition: all 0.3s ease;
       &:hover {
-        transform: scale(1.2);
+        transform: rotate(90deg) scale(1.2);
       }
     }
   }
