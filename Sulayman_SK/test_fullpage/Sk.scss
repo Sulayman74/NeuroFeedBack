@@ -395,3 +395,152 @@ header {
     font-family: "Poppins ExtraBold";
   }
 }
+
+.contactmy {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  // background-color: #eee;
+
+  .cabinetmaps {
+    width: 50%;
+    height: auto;
+    // background-color: blue;
+
+    .cabinet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+    
+      
+
+      h2 {
+        width: fit-content;
+        text-align: center;
+        transition: all 0.3s linear;
+      //  font-family: $font-family-Oswald;
+        &:hover {
+        text-decoration: underline;
+      }
+      }
+
+      p {
+       font-family: $font-family-Poppins;
+       text-align: center;
+      }
+
+      i {
+        padding: 10px 0;
+        margin: auto;
+        font-family: $font-family-Oswald;
+        transition : all 0.2s linear;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .maps {
+      width: 100%;
+      height: auto;
+      height: auto;
+      padding: 20px 0;
+
+      iframe {
+        width: 100%;
+        &:hover {
+          
+          box-shadow: 0 2px 15px  $color-bleu-marine;
+        }
+        // height: auto;
+      }
+    }
+  }
+
+  form {
+    width: 40%;
+    margin: auto;
+    // text-align: left;
+    padding: 20px 0;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+label {
+font-family:$font-family-Oswald;
+}
+  input:not(#boutonSend),
+  textarea,
+  label {
+    display: block;
+    margin: 5px auto;
+    width: 100%;
+    color: #000;
+  }
+input::placeholder{
+color: $color-bleu-turquoise;
+font-family: $font-family-Poppins;
+font-size: 0.9em;
+opacity: 0.6;
+}
+  input:not(#boutonSend),
+  textarea {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid $color-bleu-marine;
+    color: #000;
+    font-size: 18px;
+    padding: 5px 5px;
+  }
+  textarea {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+#boutonSend {
+width: 30%;
+    font-size: 18px;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #545557;
+    color: #fff;
+    border-radius: 3px;
+  }
+#boutonSend:hover {
+    background-color:transparent;
+    color: #000;
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: 1px solid #20a39d;
+  }
+}
+
+#subject {
+// appearance:none;
+border: none; 
+transition: all 0.3s ease;
+padding: 10px;
+font-size: 1.1em;
+border-radius: 5px;
+&:hover{
+  background-color: #545557;
+    color: #fff;
+  
+}
+}
+#subject:focus {
+outline: 1px solid #20a39d;
+border-radius: 5px;
+}

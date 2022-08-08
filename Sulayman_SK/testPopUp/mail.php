@@ -4,6 +4,9 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
+$date = $_POST['date'];
+
+
 
 
 $mailheader = "Form:" .$name."<".$email.">\r\n";
