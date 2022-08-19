@@ -1,114 +1,128 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #eee;
+  font-family: "Poppins", sans-serif;
+  background-color: #eee;
 }
 
+.tonton-krimo {
+  /* Add Class "Tonton-krimo" pour center les divs*/
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
 .container-fluid {
-    width: 40vw;
-    margin: 0 auto;
-    margin-top: 100px;
+  width: 50%; /* modif de 40vw a 50% */
+  height: auto; /* add height */
+  display: inline-block; /* add display */
+  flex-direction: column; /* add flex-direction */
+  position: absolute;
+  margin: 0 auto;
+  margin-top: 100px;
+  /* border: 1px solid red; */ /* guide repere */
 }
 
-@media screen and (max-width:1200px) {
-    .container-fluid{
-        width: 80%;
-     }
+@media screen and (max-width: 1200px) {
+  .container-fluid {
+    width: 80%;
+  }
 }
 
 .container-fluid h2 {
-    color: rgb(31, 10, 164);
-    position: relative;
-    width: 23rem;
+  color: rgb(31, 10, 164);
+  position: relative;
+  width: 23rem;
 }
 
 .container-fluid h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 55%;
-    width: 67px;
-    height: 2px;
-    background-color: rgb(31, 10, 164);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 55%;
+  width: 67px;
+  height: 2px;
+  background-color: rgb(31, 10, 164);
 }
 
 .accordion {
-    width: 100%;
-    padding: 0 5px;
-    border: 2px solid rgb(31, 10, 164);;
-    cursor: pointer;
-    border-radius: 50px;
-    display: flex;
-    margin: 10px 0;
-    align-items: center;
-
+  width: 100%;
+  padding: 0 5px;
+  border: 2px solid rgb(31, 10, 164);
+  cursor: pointer;
+  border-radius: 50px;
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
 }
 
-
-
 .accordion .icon {
-    /* margin: 0 10px 0 0; */
-    min-width: 30px;
-    min-height: 30px;
-    background: url('') no-repeat 8px 7px aqua;
-    border-radius: 50%;
-    float: left;
-    transition: all .5s ease-in;
+  /* margin: 0 10px 0 0; */
+  min-width: 30px;
+  min-height: 30px;
+  background: url("") no-repeat 8px 7px aqua;
+  border-radius: 50%;
+  float: left;
+  transition: all 0.5s ease-in;
 }
 
 .accordion .icons:after {
-    content: '\002B';
-    font-weight: 1000;
-    font-size: 30px;
-    margin-left: 20px;
-    transition: all .5s ease;
-    color: rgb(245, 245, 248);
+  content: "\002B";
+  font-weight: 1000;
+  font-size: 30px;
+  margin-left: 20px;
+  transition: all 0.5s ease;
+  color: rgb(245, 245, 248);
 }
 
 .active .icons:after {
-    content: '\2212';
-    font-size: 30px;
-    font-weight: bolder;
+  content: "\2212";
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .accordion h5 {
-    font-size: 15px;
-    margin: 0% 0% 0% 5%;
-    padding: 5px 0;
-    font-weight: normal;
-    color: rgb(31, 10, 164);
-   
+  font-size: 15px;
+  margin: 0% 0% 0% 5%;
+  padding: 5px 0;
+  font-weight: normal;
+  color: rgb(31, 10, 164);
 }
 
 .active .icon {
-   background: url(images/plus.png) no-repeat 8px -25px rgb(252, 252, 253); 
+  background: url(images/plus.png) no-repeat 8px -25px rgb(252, 252, 253);
 }
 
 .active {
-    background-color: aqua;
-    color: white;
+  background-color: aqua;
+  color: white;
 }
 
 .active h5 {
-    color: white;
-    transition: all .5s ease-in;
+  color: white;
+  transition: all 0.5s ease-in;
 }
 
 .panel {
-    padding: 0 15px;
-    border-left: 1px solid rgb(31, 10, 164);
-    margin-left: 25px;
-    font-size: 14px;
-    text-align: justify;
-    overflow: hidden;
-    max-height: 0;
-    transition: all .5s ease-in;
+  padding: 0 15px;
+  border-left: 1px solid rgb(31, 10, 164);
+  margin-left: 25px;
+  font-size: 14px;
+  text-align: justify;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-in;
 }
 
-#particles-js{
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    z-index: -1;
+#particles-js {
+  width: 100%; /* add width*/
+  height: 100vh;
+  display: inline-block; /*  add display */
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  /* border: 1px solid yellow;  */ /* guide repere */
 }
