@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+  <title>NeuroFeedback.ch </title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+      color: #FFFFFF;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    }
+
+
+    body header {
+      background-color: transparent;
+      font-family: 'Oswald', sans-serif;
+      position: fixed;
+      display: block;
+      width: 100%;
+      height: 48px;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 90;
+    }
+
+    body header .header-inner {
+      padding: 12px 1.5%;
+    }
+
+    body header .header-inner .logo {
+      position: relative;
+      display: inline;
+      width: auto;
+      height: auto;
+      float: left;
+    }
+
+    body header .header-inner .logo a {
+      position: relative;
+      display: inline;
+      width: auto;
+      height: auto;
+      color: #FFFFFF;
+      outline: 0px none;
+      outline: 0px;
+      text-decoration: none;
+      transition: all 0.35s ease-in-out;
+      text-transform: uppercase;
+    }
+
+    body header .header-inner .logo a:hover {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    body header .header-inner .logo a span {
+      font-weight: 700;
+    }
+
+    body header .header-inner nav {
+      position: relative;
+      display: inline;
+      margin: 0;
+      padding: 0;
+      list-type-style: none;
+      float: right;
+    }
+
+    body header .header-inner nav li {
+      position: relative;
+      display: inline;
+      margin-left: 16px;
+    }
+
+    body header .header-inner nav li a {
+      font-family: 'Oswald', sans-serif;
+      position: relative;
+      font-size: 13px;
+      color: #FFFFFF;
+      text-decoration: none;
+      line-height: 24px;
+      transition: all 0.35s ease-in-out;
+    }
+
+    body header .header-inner nav li a span {
+      position: relative;
+      z-index: 2;
+    }
+
+    body header .header-inner nav li a:hover {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    body section.slideshow {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    body section.slideshow ul.navigation {
+      position: absolute;
+      display: block;
+      width: 640px;
+      height: 640px;
+      padding: 0;
+      margin: 0;
+      left: -230px;
+      top: 50%;
+      margin-top: -320px;
+      z-index: 10;
+    }
+
+    body section.slideshow ul.navigation li.navigation-item {
+      position: absolute;
+      display: inline-block;
+      overflow: hidden;
+      width: 120px;
+      height: 120px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: border 0.6s ease-in-out;
+    }
+
+    body section.slideshow ul.navigation li.navigation-item .rotate-holder {
+      position: fixed;
+      display: block;
+      width: 0;
+      height: 0;
+      left: -9999px;
+      top: -9999px;
+    }
+
+    body section.slideshow ul.navigation li.navigation-item .background-holder {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+    }
+
+    body section.slideshow ul.navigation li.navigation-item:hover .background-holder {
+      opacity: 0.75;
+    }
+
+    body section.slideshow ul.navigation li.navigation-item.active .background-holder {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    body section.slideshow .detail {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 8;
+    }
+
+    body section.slideshow .detail .detail-item {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    body section.slideshow .detail .detail-item .headline {
+      position: absolute;
+      display: block;
+      width: 100%;
+      max-width: calc(100% - 480px);
+      height: 126px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: visible;
+      white-space: nowrap;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .details {
+      position: absolute;
+      display: block;
+      width: 100%;
+      font-family: 'Oswald', sans-serif;
+      max-width: calc(100% - 480px);
+      height: 126px;
+      top: 65%;
+      left: 70%;
+      font-size: 2rem;
+      transform: translate(-50%, -50%);
+      overflow: visible;
+      white-space: wrap;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .details .letter {
+      font-family: 'Oswald', sans-serif;
+      position: relative;
+      display: inline-block;
+      opacity: 0;
+      visibility: hidden;
+      color: #FFFFFF;
+      font-size: 62px;
+      line-height: 110px;
+      font-weight: 600;
+      font-kerning: none;
+      white-space: wrap;
+      box-sizing: border-box;
+      /* text-transform: uppercase; */
+    }
+
+    body section.slideshow .detail .detail-item .headline .letter {
+      font-family: 'Oswald', sans-serif;
+      position: relative;
+      display: inline-block;
+      opacity: 0;
+      visibility: hidden;
+      color: #FFFFFF;
+      font-size: 132px;
+      line-height: 110px;
+      font-weight: 900;
+      font-kerning: none;
+      white-space: nowrap;
+      box-sizing: border-box;
+      text-transform: uppercase;
+    }
+
+    body section.slideshow .detail .detail-item .background {
+      position: absolute;
+      display: block;
+      width: 100%;
+      width: calc(100% + 100px);
+      height: 100%;
+      height: calc(100% + 100px);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: visible;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      z-index: 1;
+    }
+
+    body section.slideshow .detail .detail-item .background::before {
+      content: "";
+      background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 90%);
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+
+    }
+
+    body section.slideshow .detail .detail-item.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <section class="slideshow">
+
+    <ul class="navigation">
+
+      <li class="navigation-item active">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/acouphenes.webp);"></span>
+      </li>
+      <!-- slideshow:navigation:item END -->
+
+      <!-- slideshow:navigation:item START -->
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/stress.jpg);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/tdah.webp);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/anxiete.jpg);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/Hyperactivite.jpg);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/sommeil.png);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/incontinence.jpg);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/depression.jpg);"></span>
+      </li>
+
+      <li class="navigation-item">
+        <span class="rotate-holder"></span>
+        <span class="background-holder" style="background-image: url(assets/img/autisme.jpg);"></span>
+      </li>
+
+
+    </ul>
+
+    <div class="detail">
+
+      <div class="detail-item active">
+        <div class="headline">ACOUPHENES</div>
+        <div class="details" id="create">Sifflements, bruissements et bourdonnements qui envahissent la tête… <br> 10%
+          de la population suisse souffre d’acouphènes. <br> Malheureusement, les thérapies cognitivo-comportementales
+          actuelles <br> ne parviennent pas toujours à améliorer la situation. Le Neurofeedback propose <br> de détourner
+          l’attention du cortex auditif pour la réaffecter sur un objet neutre.</div>
+        <div class="background" style="background-image: url(assets/img/acouphenes.webp); height: 100vh;"></div>
+        <div class="background"
+          style="background-image: url(assets/img/acouphenes.webp); height: 100vh; background-size: cover; background-position: center;">
+        </div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">STRESS</div>
+        <div class="details" id="create">En favorisant l’autorégulation du cerveau, le Neurofeedback facilite la
+          concentration, <br> permet une meilleure gestion
+          du stress et génère une plus grande énergie physique et mentale.</div>
+        <div class="background" style="background-image: url(assets/img/stress.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">TDA/H</div>
+        <div class="details" id="create">« Nos propres travaux semblent indiquer que le neurofeedback a un effet
+          positif réel <br> sur certains enfants souffrant de TDAH ». <br> André Achim, professeur de psychologie à
+          l’Université du Québec </div>
+        <div class="background" style="background-image: url(assets/img/tdah.webp);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">ANXIETE</div>
+        <div class="details" id="create">La médication ne permet pas de supprimer totalement les
+          symptômes principaux de l’anxiété. <br>
+          Le neurofeedback, en revanche, permet d’obtenir des résultats durables dans le temps <br> car il est axé sur
+          l’entraînement du cerveau dans le but de remodeler ses connexions neuronales <br> pour mieux fonctionner.
+        </div>
+        <div class="background" style="background-image: url(assets/img/anxiete.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">HYPER-ACTIVITE</div>
+        <div class="details" id="create">Les directives pour l’évaluation de l’efficacité clinique concluent que
+          le traitement par neurofeedback <br> pour le TDAH peut être considéré “Efficace et Précis” (niveau 5) avec une
+          TE
+          importante pour l’inattention <br> et l’impulsivité et une TE modérée pour l’hyperactivité.</div>
+        <div class="background" style="background-image: url(assets/img/Hyperactivite.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">SOMMEIL</div>
+        <div class="details" id="create">Vous n’arrivez pas à dormir ? Vous vous réveillez pendant la nuit ? Du mal à
+          entrer dans un sommeil profond ? <br>
+          Et si le problème était lié à votre activité cérébrale ?
+          La bonne nouvelle, c’est qu’il est possible d’entrainer <br> son cerveau à produire ces ondes qui favorisent
+          le
+          sommeil grâce au Neurofeedback.</div>
+        <div class="background" style="background-image: url(assets/img/sommeil.png);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">INCONTINENCE</div>
+        <div class="details" id="create">Dans le cadre de l'incontinence, le biofeedback consiste à
+          apprendre à contrôler les muscles du périnée <br> ou les sphincters (de l'urètre ou de l'anus).
+
+          Des sondes sont placées dans le vagin ou le rectum, et un ordinateur <br> permet de voir en direct
+          l'efficacité des
+          contractions musculaires lorsque le patient contracte ou relâche <br> volontairement les muscles.</div>
+        <div class="background" style="background-image: url(assets/img/incontinence.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">DEPRESSION</div>
+        <div class="details" id="create">Selon le type d’activité cérébrale (par exemple asymétrie ou excès d’ondes
+          rapides), un protocole <br> d’entraînement personnalisé est conçu pour vous.
+          Avec le neurofeedback, les personnes souffrant de ce <br> type de dépression peuvent s’entraîner à diminuer
+          l’importance de la fréquence High Beta dans leur cerveau.</div>
+        <div class="background" style="background-image: url(assets/img/depression.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+      <!-- slideshow:details START -->
+      <div class="detail-item">
+        <div class="headline">AUTISME</div>
+        <div class="details" id="create">Plusieurs études ont montré que les personnes atteintes d’autisme sont en
+          mesure de modifier leur activité <br> cérébrale dans des bandes de fréquences spécifiques par l’utilisation du
+          neurofeedback et que le traitement <br> par le neurofeedback peut permettre des changements prolongés dans les
+          symptômes de l’autisme, <br> ainsi que des évolutions durables, dans le fonctionnement cognitif</div>
+        <div class="background" style="background-image: url(assets/img/autisme.jpg);"></div>
+      </div>
+      <!-- slideshow:details END -->
+
+    </div>
+    <!-- slideshow:details END -->
+
+  </section>
+  <!-- slideshow END -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+  <script src="assets/js/demo.js"></script>
+
+</body>
+
+</html>
