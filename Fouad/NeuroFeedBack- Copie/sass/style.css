@@ -4,7 +4,7 @@
 /* =============== scroll smooth ================= */
 /* -------------------------------------------------------- grid-options-16-1440  -------------------------------------------------------- */
 .grid-options-16-1440 {
-  width: 1024px;
+  width: 1440px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -155,112 +155,159 @@
   text-decoration: none;
 }
 
-html,
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  /* optional: show position indicator in red */
+}
+html ::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space /
+  background: transparent; /* optional: just make scrollbar invisible */
+}
+html ::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 body {
-  width: 100%;
-  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
+  position: fixed;
   width: 100%;
-  min-height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+header .header-row {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 60px;
+  border: 1px solid black;
+}
+header .brand-logo a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 800;
+  font-size: 1.4em;
+}
+header .menu-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+header .hamburger path {
+  fill: none;
+  stroke: #333;
+  stroke-linecap: round;
+}
+
+.fullpage-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 98;
+}
+.fullpage-menu .fullpage-menu-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 100px 60px;
+}
+.fullpage-menu .menu-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fullpage-menu .menu-bg span {
+  width: 100%;
+  background: #1a77ad;
+  display: block;
+  height: 33.334%;
+}
+.fullpage-menu nav {
+  position: relative;
+  z-index: 10;
+}
+.fullpage-menu nav ul {
+  list-style-type: none;
+}
+.fullpage-menu nav li {
+  transition: transform 300ms ease-in-out;
   overflow: hidden;
 }
-header .container {
+.fullpage-menu nav li + li {
+  margin-top: 20px;
+}
+.fullpage-menu nav li a {
+  font-size: 5vmax;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1;
+}
+.fullpage-menu nav li:hover {
+  transform: translateX(50px);
+}
+
+.header-nav-footer {
   position: absolute;
-  width: 30px;
-  height: 20px;
-  top: 5%;
-  right: 5%;
-  cursor: pointer;
-}
-header .container .bars {
-  width: 30px;
-  height: 4px;
-  background: #000;
-}
-header .container .bars::before,
-header .container .bars::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 4px;
-  background: #000;
-}
-header .container .bars::before {
-  margin-top: 9px;
-}
-header .container .bars::after {
-  margin-top: 18px;
-}
-header nav {
-  position: absolute;
-  background: #000;
   width: 100%;
-  height: 30px;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+.header-nav-footer .social-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+}
+.header-nav-footer .social-links li {
+  font-size: 18px;
+  font-weight: 500;
+}
+.header-nav-footer .social-links li + li {
+  margin-left: 15px;
+}
+.header-nav-footer .social-links li:last-child {
+  margin-left: auto;
+}
+.header-nav-footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.placeholder-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  right: -200vw;
-}
-header nav ul li {
-  margin: 40px 0;
-}
-header nav ul li a {
-  color: #fafafa;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 500;
-  position: relative;
-  pointer-events: none;
-  opacity: 0;
-}
-header nav ul li a:after {
-  content: "";
   width: 100%;
-  position: absolute;
-  height: 3px;
-  border-radius: 5px;
-  background-color: #fff;
-  bottom: -10px;
-  left: 0;
-  transform-origin: left;
-  transition: transform 0.5s ease;
-  transform: scaleX(0);
+  height: 100vh;
+  padding: 0 15vw;
 }
-header nav ul li a:hover:after {
-  transform: scaleX(1);
+.placeholder-title h1 {
+  font-size: 6vw;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
 }
-header nav .close {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 6%;
-  right: 5%;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-}
-header nav .close div::before,
-header nav .close div::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 4px;
-  background-color: #fff;
-  transition: background 0.5s ease;
-}
-header nav .close div::before {
-  transform: rotate(-45deg);
-}
-header nav .close div::after {
-  transform: rotate(45deg);
-}
-header nav .close:hover div::before .close:hover div::after {
-  background: rgb(209, 3, 3);
+.placeholder-title h1 span {
+  font-size: 3vmax;
 }
 
 #back {
@@ -373,7 +420,7 @@ header nav .close:hover div::before .close:hover div::after {
   position: sticky;
 }
 #back .contact h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Oswald", sans-serif, serif;
   font-size: 59px;
   font-weight: 600;
   padding-top: 20px;
@@ -390,22 +437,37 @@ header nav .close:hover div::before .close:hover div::after {
 #back .contact .contactmy .cabinetmaps {
   width: 50%;
   height: auto;
-  height: auto;
 }
 #back .contact .contactmy .cabinetmaps .cabinet {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: auto;
 }
 #back .contact .contactmy .cabinetmaps .cabinet h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: center;
+  transition: all 0.3s linear;
+  font-family: "Oswald", sans-serif;
+}
+#back .contact .contactmy .cabinetmaps .cabinet h2:hover {
+  text-decoration: underline;
 }
 #back .contact .contactmy .cabinetmaps .cabinet p {
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 #back .contact .contactmy .cabinetmaps .cabinet i {
   padding: 10px 0;
   margin: auto;
+  font-family: "Oswald", sans-serif;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+#back .contact .contactmy .cabinetmaps .cabinet i:hover {
+  transform: scale(1.1);
 }
 #back .contact .contactmy .cabinetmaps .maps {
   width: 100%;
@@ -416,51 +478,117 @@ header nav .close:hover div::before .close:hover div::after {
 #back .contact .contactmy .cabinetmaps .maps iframe {
   width: 100%;
 }
+#back .contact .contactmy .cabinetmaps .maps iframe:hover {
+  box-shadow: 0 2px 15px #022b88;
+}
 #back .contact .contactmy form {
   width: 40%;
   margin: auto;
   padding: 20px 0;
+  display: flex;
+  flex-direction: column;
 }
-#back .contact .contactmy input,
+#back .contact .contactmy label {
+  font-family: "Oswald", sans-serif;
+}
+#back .contact .contactmy input:not(#boutonSend),
 #back .contact .contactmy textarea,
 #back .contact .contactmy label {
   display: block;
-  margin: 0 auto;
+  margin: 5px auto;
   width: 100%;
-  color: #828282;
+  color: #000;
 }
-#back .contact .contactmy input,
+#back .contact .contactmy input::-moz-placeholder {
+  color: #39c7ce;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+#back .contact .contactmy input:-ms-input-placeholder {
+  color: #39c7ce;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+#back .contact .contactmy input::placeholder {
+  color: #39c7ce;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+#back .contact .contactmy input:not(#boutonSend),
 #back .contact .contactmy textarea {
   background-color: transparent;
   border: 0;
-  border-bottom: 2px solid #828282;
+  border-bottom: 2px solid #022b88;
+  color: #000;
+  font-size: 18px;
+  padding: 5px 5px;
 }
-#back .contact .contactmy input[type=submit] {
+#back .contact .contactmy textarea {
+  font-size: 12px;
+  padding: 10px 15px;
+}
+#back .contact .contactmy #boutonSend {
+  width: 30%;
   font-size: 18px;
   padding: 15px 0;
+  border: none;
+  outline: none;
   margin-top: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: transparent;
-  color: #000;
-}
-#back .contact .contactmy input[type=submit]:hover {
   background-color: #545557;
   color: #fff;
+  border-radius: 3px;
 }
-#back .contact .contactmy input,
-#back .contact .contactmy textarea {
+#back .contact .contactmy #boutonSend:hover {
+  background-color: transparent;
   color: #000;
-  font-size: 18px;
-  padding: 10px;
+  transform: scale(1.05);
+  text-decoration: underline;
 }
 #back .contact .contactmy input:focus,
 #back .contact .contactmy textarea:focus {
-  outline: 1px solid #828282;
+  outline: 1px solid #20a39d;
+}
+#back .contact #subject {
+  border: none;
+  transition: all 0.3s ease;
+  padding: 10px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+#back .contact #subject:hover {
+  background-color: #545557;
+  color: #fff;
+}
+#back .contact #subject:focus {
+  outline: 1px solid #20a39d;
+  border-radius: 5px;
 }
 #back .suite {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
   background-color: #eee;
+}
+#back .suite2 {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(223, 12, 12);
+}
+#back .suite3 {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(138, 0, 252);
+}
+#back .suite4 {
+  width: 100%;
+  min-height: 50vh;
+  overflow: hidden;
+  background-color: rgb(252, 235, 0);
 }/*# sourceMappingURL=style.css.map */
