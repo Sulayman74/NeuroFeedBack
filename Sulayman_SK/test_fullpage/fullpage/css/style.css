@@ -64,6 +64,7 @@ html.fp-enabled,
   position: absolute;
   z-index: 4;
   top: 50%;
+  /* transform: translateY(-50%); */
   cursor: pointer;
   margin-top: -38px;
   -webkit-transform: translate3d(0, 0, 0);
@@ -71,23 +72,28 @@ html.fp-enabled,
   transform: translate3d(0, 0, 0);
 }
 .fp-prev {
-  left: 15px;
+  top: 55%;
+  transform: translate(0, -50%);
+  left: 40px;
 }
 .fp-next {
-  right: 15px;
+  top: 55%;
+  transform: translate(0, -50%);
+  right: 40px;
 }
+
 .fp-arrow {
   width: 0;
   height: 0;
   border-style: solid;
 }
 .fp-arrow.fp-prev {
-  border-width: 38.5px 34px 38.5px 0;
-  border-color: transparent #fff transparent transparent;
+  border-width: 15px 12px 15px 0;
+  border-color: transparent rgba(0, 0, 139, 0.372) transparent transparent;
 }
 .fp-arrow.fp-next {
-  border-width: 38.5px 0 38.5px 34px;
-  border-color: transparent transparent transparent #fff;
+  border-width: 15px 0 15px 12px;
+  border-color: transparent transparent transparent rgba(0, 0, 139, 0.425);
 }
 /* .fp-scrollable {
     overflow: hidden;
