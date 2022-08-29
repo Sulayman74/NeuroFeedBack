@@ -48,8 +48,8 @@ echo '
 
 <main>
     <div class="contact">
-        <h2>Thank you for contacting me. Iwill get back to youas soon as possiblel</h2>
-        <p class="back">Go back to the<a href="index.html">Home page</a></p>
+        <h2>Merci de me contacter. Je vous répondrai dans les plus brefs délais</h2>
+        <p class="back">Retournez à la<a href="index.html">Home page</a></p>
     </div>
 
 </main>

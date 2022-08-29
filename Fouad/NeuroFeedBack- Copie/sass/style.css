@@ -2,150 +2,14 @@
 /* =============== couleurs (colores) ================= */
 /* =============== source et typographie ================= */
 /* =============== scroll smooth ================= */
-/* -------------------------------------------------------- grid-options-16-1440  -------------------------------------------------------- */
-.grid-options-16-1440 {
-  width: 1440px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #022b88;
-  position: fixed;
-  z-index: 100;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-.grid-options-16-1440 .col {
-  width: 69px;
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(252, 0, 0, 0.05);
-  margin: 0 10px;
-}
-.grid-options-16-1440 .n-1 {
-  margin-left: 0;
-}
-.grid-options-16-1440 .n-16 {
-  margin-right: 0;
-}
 
-/* -------------------------------------------------------- grid-options- 12 - 1024  -------------------------------------------------------- */
-@media all and (max-width: 1025px) {
-  .grid-options-16-1440 .n-13,
-.grid-options-16-1440 .n-14,
-.grid-options-16-1440 .n-15,
-.grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 64px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options-8 - 768  -------------------------------------------------------- */
-@media all and (max-width: 769px) {
-  .grid-options-16-1440 .n-9,
-.grid-options-16-1440 .n-10,
-.grid-options-16-1440 .n-11,
-.grid-options-16-1440 .n-12,
-.grid-options-16-1440 .n-13,
-.grid-options-16-1440 .n-14,
-.grid-options-16-1440 .n-15,
-.grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 74px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options- 4 - 425  -------------------------------------------------------- */
-@media all and (max-width: 426px) {
-  .grid-options-16-1440 .n-5,
-.grid-options-16-1440 .n-6,
-.grid-options-16-1440 .n-7,
-.grid-options-16-1440 .n-8,
-.grid-options-16-1440 .n-9,
-.grid-options-16-1440 .n-10,
-.grid-options-16-1440 .n-11,
-.grid-options-16-1440 .n-12,
-.grid-options-16-1440 .n-13,
-.grid-options-16-1440 .n-14,
-.grid-options-16-1440 .n-15,
-.grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 83px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options- 4 - 375  -------------------------------------------------------- */
-@media all and (max-width: 376px) {
-  .grid-options-16-1440 .n-5,
-.grid-options-16-1440 .n-6,
-.grid-options-16-1440 .n-7,
-.grid-options-16-1440 .n-8,
-.grid-options-16-1440 .n-9,
-.grid-options-16-1440 .n-10,
-.grid-options-16-1440 .n-11,
-.grid-options-16-1440 .n-12,
-.grid-options-16-1440 .n-13,
-.grid-options-16-1440 .n-14,
-.grid-options-16-1440 .n-15,
-.grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 71px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options- 4 - 320  -------------------------------------------------------- */
-@media all and (max-width: 321px) {
-  .grid-options-16-1440 .n-5,
-.grid-options-16-1440 .n-6,
-.grid-options-16-1440 .n-7,
-.grid-options-16-1440 .n-8,
-.grid-options-16-1440 .n-9,
-.grid-options-16-1440 .n-10,
-.grid-options-16-1440 .n-11,
-.grid-options-16-1440 .n-12,
-.grid-options-16-1440 .n-13,
-.grid-options-16-1440 .n-14,
-.grid-options-16-1440 .n-15,
-.grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 58px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- fin :grid-options -------------------------------------------------------- */
+/* =============== @import css plugin's ================= */
+@import "btn-to-up.css";
+@import "menu_header_Icons_Liens.css";
+@import "progression.css";
+@import"gridoptions_full.css";
+
+/* --------------------------------------------------------  Start CSS Full page -------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -166,7 +30,7 @@ html ::-webkit-scrollbar {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 html ::-webkit-scrollbar-thumb {
-  background: #FF0000;
+  background: #ff0000;
 }
 
 body {
@@ -174,124 +38,19 @@ body {
   background-size: cover;
 }
 
-header {
+/*  progression
+=========================================================================== */
+#progression {
+  width: 0;
+  height: 5px;
   position: fixed;
-  width: 100%;
-  left: 0;
+  background-color: red;
   top: 0;
-  z-index: 99;
-}
-header .header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  border: 1px solid black;
-}
-header .brand-logo a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 800;
-  font-size: 1.4em;
-}
-header .menu-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-header .hamburger path {
-  fill: none;
-  stroke: #333;
-  stroke-linecap: round;
-}
-
-.fullpage-menu {
-  position: fixed;
   left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  display: none;
-  z-index: 98;
+  z-index: 100;
 }
-.fullpage-menu .fullpage-menu-inner {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 100px 60px;
-}
-.fullpage-menu .menu-bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.fullpage-menu .menu-bg span {
-  width: 100%;
-  background: #1a77ad;
-  display: block;
-  height: 33.334%;
-}
-.fullpage-menu nav {
-  position: relative;
-  z-index: 10;
-}
-.fullpage-menu nav ul {
-  list-style-type: none;
-}
-.fullpage-menu nav li {
-  transition: transform 300ms ease-in-out;
-  overflow: hidden;
-}
-.fullpage-menu nav li + li {
-  margin-top: 20px;
-}
-.fullpage-menu nav li a {
-  font-size: 5vmax;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 400;
-  display: inline-block;
-  line-height: 1;
-}
-.fullpage-menu nav li:hover {
-  transform: translateX(50px);
-}
-
-.header-nav-footer {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 60px;
-}
-.header-nav-footer .social-links {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #fff;
-}
-.header-nav-footer .social-links li {
-  font-size: 18px;
-  font-weight: 500;
-}
-.header-nav-footer .social-links li + li {
-  margin-left: 15px;
-}
-.header-nav-footer .social-links li:last-child {
-  margin-left: auto;
-}
-.header-nav-footer .social-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
+/*  Section home
+=========================================================================== */
 .placeholder-title {
   display: flex;
   justify-content: center;
@@ -591,4 +350,4 @@ header .hamburger path {
   min-height: 50vh;
   overflow: hidden;
   background-color: rgb(252, 235, 0);
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

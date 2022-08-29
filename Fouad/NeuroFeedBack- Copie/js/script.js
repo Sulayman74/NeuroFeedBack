@@ -1,4 +1,5 @@
-// ------ btn go up... ------
+// ------ btn go up...
+// =====================================================!!!
 $(window).scroll(function () {
   if ($(this).scrollTop() > 150) $(".gotopbtn").addClass("active");
   else $(".gotopbtn").removeClass("active");
@@ -7,14 +8,15 @@ $(".gotopbtn").click(function () {
   $("html, body").animate({ scrollTop: 0 }, 400);
 });
 
-// ------ menu-color : noir et blanc... ------
-
+// ------ menu-color : noir et blanc... 
+// =====================================================!!!
 window.addEventListener('scroll', function () {
   var header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 0);
 })
 
-// ------ Start scripte scroll Trigger - Video + mini img...  ------
+// ------ Start scripte scroll Trigger - Video + mini img...  
+// =====================================================!!!
 
 gsap.to("#videoplyr", {
   scrollTrigger: {
@@ -66,13 +68,12 @@ gsap.to("#holdr2", {
   opacity: 0,
 });
 
-// ------ End scripte scroll Trigger - Video + mini img...  ------
-
-//__---Start scripte GSAP Menu !!!
-
+//__---Start scripte GSAP Menu 
+// =====================================================!!!
 var t1 = gsap.timeline({ paused: true });
 
 var menuToggle = document.getElementById("menuToggle");
+
 var menuBar = gsap.timeline();
 
 menuBar.to(
@@ -149,5 +150,35 @@ t1.from(
   },
   "-=0.5"
 );
+// ___
+// fermeture de menu suite au clik link a ;)
+$(document).on("click", ".main-menu a", function () {
+  menuBar.reversed(!menuBar.reversed());
+  t1.reverse(!t1.reverse());
+});
 
 //__---End scripte GSAP Menu !!!
+
+
+//__progression page
+// =====================================================!!!
+window.onload = () => {
+  // Ecouteur d'évènement sur scroll
+  window.addEventListener("scroll", () => {
+    //  Calcul de la hauteur "utile" du document (on prend la hauteur totale du document et ont enlève la hauteur de la fenêtre)
+    let hauteur = document.documentElement.scrollHeight - window.innerHeight
+
+    // Récupération de la position verticale
+    let position = window.scrollY
+
+    // Récupération de la largeur de la fenêtre
+    let largeur = document.documentElement.clientWidth
+
+    // calcul de la largeur de la barre
+    let barre = position / hauteur * largeur
+
+    // Modification du CSS de la barre
+    document.getElementById("progression").style.width = barre + "px"
+
+  })
+}

@@ -1,0 +1,142 @@
+/*  Section navbar ( logo + menu burger ) + opt changement de couleur au scroll
+=========================================================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100;
+}
+
+header.sticky {
+  padding: 10px 100px;
+  background: #1a77ad;
+}
+
+header.sticky .logo {
+  color: #fff;
+}
+header.sticky .hamburger path {
+  stroke: #fff;
+}
+
+header .logo {
+  /* position: relative; */
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  font-style: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+
+.menu-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger path {
+  fill: none;
+  stroke: #333;
+  stroke-linecap: round;
+}
+
+/*  Section menu burger
+=========================================================================== */
+.fullpage-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 101;
+}
+.fullpage-menu .fullpage-menu-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 100px 60px;
+}
+.fullpage-menu .menu-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fullpage-menu .menu-bg span {
+  width: 100%;
+  background: #1a77ad;
+  display: block;
+  height: 33.334%;
+}
+.fullpage-menu nav {
+  position: relative;
+  z-index: 10;
+}
+.fullpage-menu nav ul {
+  list-style-type: none;
+}
+.fullpage-menu nav li {
+  transition: transform 300ms ease-in-out;
+  overflow: hidden;
+}
+.fullpage-menu nav li + li {
+  margin-top: 20px;
+}
+.fullpage-menu nav li a {
+  font-size: 5vmax;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1;
+}
+.fullpage-menu nav li:hover {
+  transform: translateX(50px);
+}
+
+.header-nav-footer {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+.header-nav-footer .social-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+}
+.header-nav-footer .social-links li {
+  font-size: 18px;
+  font-weight: 500;
+}
+.header-nav-footer .social-links li + li {
+  margin-left: 15px;
+}
+.header-nav-footer .social-links li:last-child {
+  margin-left: auto;
+}
+.header-nav-footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*  Section xxxxxx
+=========================================================================== */
