@@ -59,6 +59,7 @@ header .logo {
   height: 100vh;
   display: none;
   z-index: 101;
+  z-index: 99;
 }
 .fullpage-menu .fullpage-menu-inner {
   display: flex;

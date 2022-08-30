@@ -1,7 +1,7 @@
 #progression {
   width: 0;
   height: 5px;
-  position: fixed;
+  position: -ms-page;
   background-color: red;
   top: 0;
   left: 0;

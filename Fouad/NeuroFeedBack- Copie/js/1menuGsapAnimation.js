@@ -79,8 +79,8 @@ t1.from(
     },
     "-=0.5"
 );
-// ___
-// fermeture de menu suite au clik link a ;)
+// ___ fermeture de menu suite au clik link a ;)
+
 $(document).on("click", ".main-menu a", function () {
     menuBar.reversed(!menuBar.reversed());
     t1.reverse(!t1.reverse());
