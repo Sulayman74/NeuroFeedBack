@@ -2,14 +2,11 @@
 /* =============== couleurs (colores) ================= */
 /* =============== source et typographie ================= */
 /* =============== scroll smooth ================= */
-
-/* =============== @import css plugin's ================= */
-@import "btn-to-up.css";
-@import "menu_header_Icons_Liens.css";
-@import "progression.css";
-@import"gridoptions_full.css";
-
-/* --------------------------------------------------------  Start CSS Full page -------------------------------------------------------- */
+@font-face {
+  font-family: Saol Display;
+  src: url("../assets/fonts-polices/") format("woff2");
+}
+/* ---------------------------------------------------------------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -30,15 +27,178 @@ html ::-webkit-scrollbar {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 html ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: #FF0000;
 }
 
+/*  header
+=========================================================================== */
 body {
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/*  progression
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100;
+}
+header.sticky {
+  padding: 10px 100px;
+  background: #1a77ad;
+}
+header.sticky .logo {
+  color: #fff;
+}
+header.sticky .hamburger path {
+  stroke: #fff;
+}
+header .logo {
+  /* position: relative; */
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  font-style: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+header .menu-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+header .hamburger path {
+  fill: none;
+  stroke: #333;
+  stroke-linecap: round;
+}
+
+/*  Section menu burger 
+=========================================================================== */
+.fullpage-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 99;
+}
+.fullpage-menu .fullpage-menu-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 100px 60px;
+}
+.fullpage-menu .menu-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fullpage-menu .menu-bg span {
+  width: 100%;
+  background: #1a77ad;
+  display: block;
+  height: 33.334%;
+}
+.fullpage-menu nav {
+  position: relative;
+  z-index: 10;
+}
+.fullpage-menu nav ul {
+  list-style-type: none;
+}
+.fullpage-menu nav li {
+  transition: transform 300ms ease-in-out;
+  overflow: hidden;
+}
+.fullpage-menu nav li + li {
+  margin-top: 20px;
+}
+.fullpage-menu nav li a {
+  font-size: 5vmax;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1;
+}
+.fullpage-menu nav li:hover {
+  transform: translateX(50px);
+}
+
+.header-nav-footer {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+.header-nav-footer .social-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+}
+.header-nav-footer .social-links li {
+  font-size: 18px;
+  font-weight: 500;
+}
+.header-nav-footer .social-links li + li {
+  margin-left: 15px;
+}
+.header-nav-footer .social-links li:last-child {
+  margin-left: auto;
+}
+.header-nav-footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*  btn to up
+=========================================================================== */
+.gotopbtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #37a3fe;
+  top: -80px;
+  right: 0px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  transition: 0.6s ease-out;
+  opacity: 0;
+  z-index: 98;
+}
+.gotopbtn.active {
+  top: calc(100% - 100px);
+  opacity: 1;
+}
+.gotopbtn:hover {
+  background-color: #27aa60;
+}
+
+/*  Section progression 
 =========================================================================== */
 #progression {
   width: 0;
@@ -47,28 +207,35 @@ body {
   background-color: red;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 101;
 }
-/*  Section home
+
+/*  Section title 
 =========================================================================== */
 .placeholder-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 90vh;
   padding: 0 15vw;
 }
 .placeholder-title h1 {
+  font-family: Saol Display;
   font-size: 6vw;
   color: #333;
-  font-weight: 500;
   text-align: center;
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
 .placeholder-title h1 span {
   font-size: 3vmax;
+  font-family: Saol Display;
 }
 
+/*  Section animation video
+=========================================================================== */
 #back {
   width: 100%;
   min-height: 100vh;
@@ -89,16 +256,16 @@ body {
   min-height: 100vh;
 }
 #back #topup .imgcntnr {
-  width: 250px;
-  height: 250px;
+  width: 15vw;
+  aspect-ratio: 1/1;
   background-color: yellow;
   background-size: cover;
   background-position: center;
 }
 #back #topup #one,
 #back #topup #sx {
-  width: 250px;
-  height: 400px;
+  width: 12.5vw;
+  height: 25vw;
   background-color: red;
 }
 #back #topup #one {
@@ -121,6 +288,14 @@ body {
   left: 300px;
   transform: translate(0, -50%);
 }
+#back #topup #holdr1 #two {
+  width: 18.5vw;
+  height: 20vw;
+}
+#back #topup #holdr1 #three {
+  width: 18.5vw;
+  height: 12.5vw;
+}
 #back #topup .holdr div {
   margin-top: 20px;
 }
@@ -130,12 +305,20 @@ body {
   right: 300px;
   transform: translate(0, -50%);
 }
+#back #topup #holdr2 #fr {
+  width: 18.5vw;
+  height: 12.5vw;
+}
+#back #topup #holdr2 #fv {
+  width: 18.5vw;
+  height: 20vw;
+}
 #back #topup #videoplyr {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 350px;
+  width: 25vw;
   min-height: 100vh;
   overflow: hidden;
   background-color: green;
@@ -165,7 +348,46 @@ body {
 #back #topup #sx {
   background-image: url(../assets/img/imgL2-1.jpg);
 }
-#back .contact {
+
+/*  Section bioetsport
+=========================================================================== */
+.bioetsport {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+/*  Section qui je suis
+=========================================================================== */
+.quijesuis {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(223, 12, 12);
+}
+
+/*  Section FAQ
+=========================================================================== */
+.faq {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(138, 0, 252);
+}
+
+/*  Section Avis Google
+=========================================================================== */
+.avisgoogle {
+  width: 100%;
+  min-height: 50vh;
+  overflow: hidden;
+  background-color: rgb(252, 235, 0);
+}
+
+/*  Section Contact
+=========================================================================== */
+.contact {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
@@ -178,14 +400,14 @@ body {
   position: -webkit-sticky;
   position: sticky;
 }
-#back .contact h2 {
+.contact h2 {
   font-family: "Oswald", sans-serif, serif;
   font-size: 59px;
   font-weight: 600;
   padding-top: 20px;
   text-align: center;
 }
-#back .contact .contactmy {
+.contact .contactmy {
   width: 80%;
   height: auto;
   display: flex;
@@ -193,17 +415,17 @@ body {
   align-items: center;
   margin: auto;
 }
-#back .contact .contactmy .cabinetmaps {
+.contact .contactmy .cabinetmaps {
   width: 50%;
   height: auto;
 }
-#back .contact .contactmy .cabinetmaps .cabinet {
+.contact .contactmy .cabinetmaps .cabinet {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
 }
-#back .contact .contactmy .cabinetmaps .cabinet h2 {
+.contact .contactmy .cabinetmaps .cabinet h2 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,73 +433,73 @@ body {
   transition: all 0.3s linear;
   font-family: "Oswald", sans-serif;
 }
-#back .contact .contactmy .cabinetmaps .cabinet h2:hover {
+.contact .contactmy .cabinetmaps .cabinet h2:hover {
   text-decoration: underline;
 }
-#back .contact .contactmy .cabinetmaps .cabinet p {
+.contact .contactmy .cabinetmaps .cabinet p {
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
-#back .contact .contactmy .cabinetmaps .cabinet i {
+.contact .contactmy .cabinetmaps .cabinet i {
   padding: 10px 0;
   margin: auto;
   font-family: "Oswald", sans-serif;
   transition: all 0.2s linear;
   cursor: pointer;
 }
-#back .contact .contactmy .cabinetmaps .cabinet i:hover {
+.contact .contactmy .cabinetmaps .cabinet i:hover {
   transform: scale(1.1);
 }
-#back .contact .contactmy .cabinetmaps .maps {
+.contact .contactmy .cabinetmaps .maps {
   width: 100%;
   height: auto;
   height: auto;
   padding: 20px 0;
 }
-#back .contact .contactmy .cabinetmaps .maps iframe {
+.contact .contactmy .cabinetmaps .maps iframe {
   width: 100%;
 }
-#back .contact .contactmy .cabinetmaps .maps iframe:hover {
+.contact .contactmy .cabinetmaps .maps iframe:hover {
   box-shadow: 0 2px 15px #022b88;
 }
-#back .contact .contactmy form {
+.contact .contactmy form {
   width: 40%;
   margin: auto;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
 }
-#back .contact .contactmy label {
+.contact .contactmy label {
   font-family: "Oswald", sans-serif;
 }
-#back .contact .contactmy input:not(#boutonSend),
-#back .contact .contactmy textarea,
-#back .contact .contactmy label {
+.contact .contactmy input:not(#boutonSend),
+.contact .contactmy textarea,
+.contact .contactmy label {
   display: block;
   margin: 5px auto;
   width: 100%;
   color: #000;
 }
-#back .contact .contactmy input::-moz-placeholder {
+.contact .contactmy input::-moz-placeholder {
   color: #39c7ce;
   font-family: "Poppins", sans-serif;
   font-size: 0.9em;
   opacity: 0.6;
 }
-#back .contact .contactmy input:-ms-input-placeholder {
+.contact .contactmy input:-ms-input-placeholder {
   color: #39c7ce;
   font-family: "Poppins", sans-serif;
   font-size: 0.9em;
   opacity: 0.6;
 }
-#back .contact .contactmy input::placeholder {
+.contact .contactmy input::placeholder {
   color: #39c7ce;
   font-family: "Poppins", sans-serif;
   font-size: 0.9em;
   opacity: 0.6;
 }
-#back .contact .contactmy input:not(#boutonSend),
-#back .contact .contactmy textarea {
+.contact .contactmy input:not(#boutonSend),
+.contact .contactmy textarea {
   background-color: transparent;
   border: 0;
   border-bottom: 2px solid #022b88;
@@ -285,11 +507,11 @@ body {
   font-size: 18px;
   padding: 5px 5px;
 }
-#back .contact .contactmy textarea {
+.contact .contactmy textarea {
   font-size: 12px;
   padding: 10px 15px;
 }
-#back .contact .contactmy #boutonSend {
+.contact .contactmy #boutonSend {
   width: 30%;
   font-size: 18px;
   padding: 15px 0;
@@ -302,52 +524,28 @@ body {
   color: #fff;
   border-radius: 3px;
 }
-#back .contact .contactmy #boutonSend:hover {
+.contact .contactmy #boutonSend:hover {
   background-color: transparent;
   color: #000;
   transform: scale(1.05);
   text-decoration: underline;
 }
-#back .contact .contactmy input:focus,
-#back .contact .contactmy textarea:focus {
+.contact .contactmy input:focus,
+.contact .contactmy textarea:focus {
   outline: 1px solid #20a39d;
 }
-#back .contact #subject {
+.contact #subject {
   border: none;
   transition: all 0.3s ease;
   padding: 10px;
   font-size: 1.1em;
   border-radius: 5px;
 }
-#back .contact #subject:hover {
+.contact #subject:hover {
   background-color: #545557;
   color: #fff;
 }
-#back .contact #subject:focus {
+.contact #subject:focus {
   outline: 1px solid #20a39d;
   border-radius: 5px;
-}
-#back .suite {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: #eee;
-}
-#back .suite2 {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: rgb(223, 12, 12);
-}
-#back .suite3 {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: rgb(138, 0, 252);
-}
-#back .suite4 {
-  width: 100%;
-  min-height: 50vh;
-  overflow: hidden;
-  background-color: rgb(252, 235, 0);
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
