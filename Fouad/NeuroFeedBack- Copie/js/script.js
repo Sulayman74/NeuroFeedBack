@@ -34,7 +34,7 @@ gsap.to("#one", {
     start: "top top",
     scrub: 3,
   },
-  left: "-600px",
+  left: "-1000px",
   opacity: 0,
 });
 
@@ -44,7 +44,7 @@ gsap.to("#holdr1", {
     start: "top top",
     scrub: 3,
   },
-  left: "-300px",
+  left: "-500px",
   opacity: 0,
 });
 
@@ -54,7 +54,7 @@ gsap.to("#sx", {
     start: "top top",
     scrub: 3,
   },
-  right: "-600px",
+  right: "-1000px",
   opacity: 0,
 });
 
@@ -64,7 +64,7 @@ gsap.to("#holdr2", {
     start: "top top",
     scrub: 3,
   },
-  right: "-300px",
+  right: "-500px",
   opacity: 0,
 });
 
