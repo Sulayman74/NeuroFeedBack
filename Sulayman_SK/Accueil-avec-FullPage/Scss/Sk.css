@@ -693,4 +693,11 @@ header .hamburger path {
   transition: all 0.3s linear;
   font-family: "Oswald Bold";
   font-size: 3em;
+}
+
+#fin .test1 {
+  background-color: #1a77ad;
+}
+#fin .test2 {
+  background-color: #20a39d;
 }/*# sourceMappingURL=Sk.css.map */
