@@ -87,10 +87,10 @@ header {
 }
 
 main {
-  background-image: url(/Vignettes-avec-Popup/assets/img/imgl2-2.webp);
+  background-image: url(/Vignettes/assets/wallpaper_sport.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left;
+  // background-position: left;
   background-attachment: fixed;
   padding-top: 20px;
 }
@@ -245,153 +245,153 @@ main {
 }
 
 /* -------------------------------------------------------- grid-options-16-1440  -------------------------------------------------------- */
-.grid-options-16-1440 {
-  width: 1440px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $color-bleu-marine;
-  position: fixed;
-  z-index: -1;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0 10px;
-  box-sizing: border-box;
-  .col {
-    width: 69px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
+// .grid-options-16-1440 {
+//   width: 1440px;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid $color-bleu-marine;
+//   position: fixed;
+//   z-index: -1;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   padding: 0 10px;
+//   box-sizing: border-box;
+//   .col {
+//     width: 69px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
 
-  .n-1 {
-    margin-left: 0;
-  }
-  .n-16 {
-    margin-right: 0;
-  }
-}
-/* -------------------------------------------------------- grid-options- 12 - 1024  -------------------------------------------------------- */
-@media all and (max-width: 1025px) {
-  .grid-options-16-1440 .n-13,
-  .grid-options-16-1440 .n-14,
-  .grid-options-16-1440 .n-15,
-  .grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 64px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
+//   .n-1 {
+//     margin-left: 0;
+//   }
+//   .n-16 {
+//     margin-right: 0;
+//   }
+// }
+// /* -------------------------------------------------------- grid-options- 12 - 1024  -------------------------------------------------------- */
+// @media all and (max-width: 1025px) {
+//   .grid-options-16-1440 .n-13,
+//   .grid-options-16-1440 .n-14,
+//   .grid-options-16-1440 .n-15,
+//   .grid-options-16-1440 .n-16 {
+//     display: none;
+//   }
+//   .col {
+//     width: 64px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
+// }
 
-/* -------------------------------------------------------- grid-options-8 - 768  -------------------------------------------------------- */
-@media all and (max-width: 769px) {
-  .grid-options-16-1440 .n-9,
-  .grid-options-16-1440 .n-10,
-  .grid-options-16-1440 .n-11,
-  .grid-options-16-1440 .n-12,
-  .grid-options-16-1440 .n-13,
-  .grid-options-16-1440 .n-14,
-  .grid-options-16-1440 .n-15,
-  .grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 74px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options- 4 - 425  -------------------------------------------------------- */
+// /* -------------------------------------------------------- grid-options-8 - 768  -------------------------------------------------------- */
+// @media all and (max-width: 769px) {
+//   .grid-options-16-1440 .n-9,
+//   .grid-options-16-1440 .n-10,
+//   .grid-options-16-1440 .n-11,
+//   .grid-options-16-1440 .n-12,
+//   .grid-options-16-1440 .n-13,
+//   .grid-options-16-1440 .n-14,
+//   .grid-options-16-1440 .n-15,
+//   .grid-options-16-1440 .n-16 {
+//     display: none;
+//   }
+//   .col {
+//     width: 74px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
+// }
+// /* -------------------------------------------------------- grid-options- 4 - 425  -------------------------------------------------------- */
 
-@media all and (max-width: 426px) {
-  .grid-options-16-1440 .n-5,
-  .grid-options-16-1440 .n-6,
-  .grid-options-16-1440 .n-7,
-  .grid-options-16-1440 .n-8,
-  .grid-options-16-1440 .n-9,
-  .grid-options-16-1440 .n-10,
-  .grid-options-16-1440 .n-11,
-  .grid-options-16-1440 .n-12,
-  .grid-options-16-1440 .n-13,
-  .grid-options-16-1440 .n-14,
-  .grid-options-16-1440 .n-15,
-  .grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 83px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
-/* -------------------------------------------------------- grid-options- 4 - 375  -------------------------------------------------------- */
+// @media all and (max-width: 426px) {
+//   .grid-options-16-1440 .n-5,
+//   .grid-options-16-1440 .n-6,
+//   .grid-options-16-1440 .n-7,
+//   .grid-options-16-1440 .n-8,
+//   .grid-options-16-1440 .n-9,
+//   .grid-options-16-1440 .n-10,
+//   .grid-options-16-1440 .n-11,
+//   .grid-options-16-1440 .n-12,
+//   .grid-options-16-1440 .n-13,
+//   .grid-options-16-1440 .n-14,
+//   .grid-options-16-1440 .n-15,
+//   .grid-options-16-1440 .n-16 {
+//     display: none;
+//   }
+//   .col {
+//     width: 83px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
+// }
+// /* -------------------------------------------------------- grid-options- 4 - 375  -------------------------------------------------------- */
 
-@media all and (max-width: 376px) {
-  .grid-options-16-1440 .n-5,
-  .grid-options-16-1440 .n-6,
-  .grid-options-16-1440 .n-7,
-  .grid-options-16-1440 .n-8,
-  .grid-options-16-1440 .n-9,
-  .grid-options-16-1440 .n-10,
-  .grid-options-16-1440 .n-11,
-  .grid-options-16-1440 .n-12,
-  .grid-options-16-1440 .n-13,
-  .grid-options-16-1440 .n-14,
-  .grid-options-16-1440 .n-15,
-  .grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 71px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
+// @media all and (max-width: 376px) {
+//   .grid-options-16-1440 .n-5,
+//   .grid-options-16-1440 .n-6,
+//   .grid-options-16-1440 .n-7,
+//   .grid-options-16-1440 .n-8,
+//   .grid-options-16-1440 .n-9,
+//   .grid-options-16-1440 .n-10,
+//   .grid-options-16-1440 .n-11,
+//   .grid-options-16-1440 .n-12,
+//   .grid-options-16-1440 .n-13,
+//   .grid-options-16-1440 .n-14,
+//   .grid-options-16-1440 .n-15,
+//   .grid-options-16-1440 .n-16 {
+//     display: none;
+//   }
+//   .col {
+//     width: 71px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
+// }
 
-/* -------------------------------------------------------- grid-options- 4 - 320  -------------------------------------------------------- */
+// /* -------------------------------------------------------- grid-options- 4 - 320  -------------------------------------------------------- */
 
-@media all and (max-width: 321px) {
-  .grid-options-16-1440 .n-5,
-  .grid-options-16-1440 .n-6,
-  .grid-options-16-1440 .n-7,
-  .grid-options-16-1440 .n-8,
-  .grid-options-16-1440 .n-9,
-  .grid-options-16-1440 .n-10,
-  .grid-options-16-1440 .n-11,
-  .grid-options-16-1440 .n-12,
-  .grid-options-16-1440 .n-13,
-  .grid-options-16-1440 .n-14,
-  .grid-options-16-1440 .n-15,
-  .grid-options-16-1440 .n-16 {
-    display: none;
-  }
-  .col {
-    width: 58px;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(252, 0, 0, 0.05);
-    margin: 0 10px;
-  }
-}
+// @media all and (max-width: 321px) {
+//   .grid-options-16-1440 .n-5,
+//   .grid-options-16-1440 .n-6,
+//   .grid-options-16-1440 .n-7,
+//   .grid-options-16-1440 .n-8,
+//   .grid-options-16-1440 .n-9,
+//   .grid-options-16-1440 .n-10,
+//   .grid-options-16-1440 .n-11,
+//   .grid-options-16-1440 .n-12,
+//   .grid-options-16-1440 .n-13,
+//   .grid-options-16-1440 .n-14,
+//   .grid-options-16-1440 .n-15,
+//   .grid-options-16-1440 .n-16 {
+//     display: none;
+//   }
+//   .col {
+//     width: 58px;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: rgba(252, 0, 0, 0.05);
+//     margin: 0 10px;
+//   }
+// }
 /* -------------------------------------------------------- fin :grid-options -------------------------------------------------------- */
 
 //  animation popup
@@ -443,6 +443,7 @@ main {
       transition: all 0.2s linear;
       &:hover {
         transform: rotate(90deg) scale(1.02);
+        color: #022b88;
       }
     }
   }
@@ -459,20 +460,25 @@ main {
     a {
       text-decoration: none;
       margin: 15px 0;
+
       button {
         cursor: pointer;
         width: 100%;
         padding: 5px 8px;
         font-size: 1em;
         color: $color-bleu-marine;
+        background-color: white;
         font-family: "Poppins Medium";
-        border-radius: 3px;
+        outline: none;
         border: none;
+        border-radius: 3px;
         box-shadow: 1px 2px 5px #39c7ce;
         transition: all 0.3s linear;
         &:hover {
           transform: scale(1.04);
           border: 1px solid #39c7ce;
+          background-color: #022b88;
+          color: white;
         }
       }
     }
@@ -491,7 +497,7 @@ main {
   &.active {
     pointer-events: all;
     opacity: 1;
-    background-image: url(/Vignettes-avec-Popup/assets/img/bg-2.jpg);
+    background-image: url(/Vignettes/assets/hockey_sport.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

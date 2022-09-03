@@ -151,8 +151,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  list-style: none;
-  text-decoration: none;
 }
 
 html,
@@ -412,14 +410,22 @@ header nav .close:hover div::before .close:hover div::after {
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
-#back .contact .contactmy .cabinetmaps .cabinet i {
-  padding: 10px 0;
+#back .contact .contactmy .cabinetmaps .cabinet a {
+  padding: 8px 0 0 0;
   margin: auto;
-  font-family: "Oswald", sans-serif;
+  color: black;
+  text-decoration: none;
   transition: all 0.2s linear;
   cursor: pointer;
 }
-#back .contact .contactmy .cabinetmaps .cabinet i:hover {
+#back .contact .contactmy .cabinetmaps .cabinet a i {
+  color: #022b88;
+  transition: all 0.2s linear;
+}
+#back .contact .contactmy .cabinetmaps .cabinet a i:hover {
+  color: green;
+}
+#back .contact .contactmy .cabinetmaps .cabinet a:hover {
   transform: scale(1.1);
 }
 #back .contact .contactmy .cabinetmaps .maps {
@@ -480,8 +486,13 @@ header nav .close:hover div::before .close:hover div::after {
   padding: 5px 5px;
 }
 #back .contact .contactmy textarea {
-  font-size: 12px;
-  padding: 10px 15px;
+  font-size: 1em;
+  padding: 10px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+#back .contact .contactmy #date {
+  cursor: pointer;
 }
 #back .contact .contactmy #boutonSend {
   width: 30%;
@@ -505,6 +516,7 @@ header nav .close:hover div::before .close:hover div::after {
 #back .contact .contactmy input:focus,
 #back .contact .contactmy textarea:focus {
   outline: 1px solid #20a39d;
+  background: rgba(128, 128, 128, 0.759);
 }
 #back #subject {
   border: none;
@@ -512,6 +524,7 @@ header nav .close:hover div::before .close:hover div::after {
   padding: 10px;
   font-size: 1.1em;
   border-radius: 5px;
+  cursor: pointer;
 }
 #back #subject:hover {
   background-color: #545557;
@@ -519,7 +532,6 @@ header nav .close:hover div::before .close:hover div::after {
 }
 #back #subject:focus {
   outline: 1px solid #20a39d;
-  border-radius: 5px;
 }
 #back .suite {
   width: 100%;
