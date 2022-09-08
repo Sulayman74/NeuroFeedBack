@@ -1,0 +1,832 @@
+/* =============== Google polices (Font) ================= */
+$font-family-Oswald: "Oswald", sans-serif;
+$font-family-Poppins: "Poppins", sans-serif;
+
+/* =============== couleurs (colores) ================= */
+$color-bleu-turquoise: #39c7ce;
+$color-bleu-marine: #022b88;
+$dark-color: #333;
+$dark-color-lighten: #f2f5ff;
+/* =============== source et typographie ================= */
+$h1-font-size: 120px;
+$h2-font-size: 30px;
+$normal-font-size: 16px;
+$small-font-size: 14px;
+
+/* =============== scroll smooth ================= */
+$scroll-behavior: smooth;
+
+@font-face {
+  font-family: Saol Display-Li;
+  src: url("../assets/fonts-polices/saol/SaolDisplay-LightItalic.woff2") format("woff2"),
+}
+
+@font-face {
+  font-family: Saol Display-Medium;
+  src: url("../assets/fonts-polices/saol/SaolDisplay-Medium.woff2") format("woff2"),
+}
+
+
+@font-face {
+  font-family: Saol Display-Bi;
+  src: url("../assets/fonts-polices/saol/SaolDisplay-BoldItalic.woff2") format("woff2"),
+}
+
+@font-face {
+  font-family: Saol Display-SBi;
+  src: url("../assets/fonts-polices/saol/SaolDisplay-SemiboldItalic.woff2") format("woff2"),
+}
+
+/* ---------------------------------------------------------------------------------------------------------------- */
+// ------------------ Général config :
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-Poppins;
+  list-style: none;
+  text-decoration: none;
+  // font-family: "Gilroy";
+}
+
+// ------------------ start remove scroll bar
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space /
+  background: transparent; /* optional: just make scrollbar invisible */
+  }
+
+  /* optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #FF0000;
+  }
+}
+
+/*  header
+=========================================================================== */
+body {
+  // font-family: $font-family-Poppins;
+  //  background-color: $dark-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100;
+
+
+  &.sticky {
+    padding: 10px 100px;
+    background: #1a77ad;
+  }
+
+  &.sticky .logo {
+    color: #fff;
+  }
+
+  &.sticky .hamburger path {
+    stroke: #fff;
+  }
+
+  .logo {
+    /* position: relative; */
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-style: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+  }
+
+  .menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger path {
+    fill: none;
+    stroke: #333;
+    stroke-linecap: round;
+  }
+}
+
+/*  Section menu burger 
+=========================================================================== */
+// °°°°°°°°°°°°°°°° links Site Web
+.fullpage-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 99;
+
+  .fullpage-menu-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 100px 60px;
+  }
+
+  .menu-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .menu-bg span {
+    width: 100%;
+    background: #1a77ad;
+    display: block;
+    height: 33.334%;
+  }
+
+  nav {
+    position: relative;
+    z-index: 10;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      transition: transform 300ms ease-in-out;
+      overflow: hidden;
+    }
+
+    li+li {
+      margin-top: 20px;
+    }
+
+    li a {
+      font-size: 5vmax;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    li:hover {
+      transform: translateX(50px);
+    }
+  }
+}
+
+// °°°°°°°°°°°°°°°° links Social
+.header-nav-footer {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+
+  .social-links {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+  }
+
+  .social-links li {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .social-links li+li {
+    margin-left: 15px;
+  }
+
+  .social-links li:last-child {
+    margin-left: auto;
+  }
+
+  .social-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+/*  btn to up
+=========================================================================== */
+.gotopbtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #37a3fe;
+  top: -80px;
+  right: 0px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  transition: 0.6s ease-out;
+  opacity: 0;
+  z-index: 98;
+
+
+  &.active {
+    top: calc(100% - 100px);
+    opacity: 1;
+  }
+
+  &:hover {
+    background-color: #27aa60;
+  }
+}
+
+
+/*  Section progression 
+=========================================================================== */
+
+#progression {
+  width: 0;
+  height: 5px;
+  position: fixed;
+  background-color: red;
+  top: 0;
+  left: 0;
+  z-index: 101;
+}
+
+
+/*  Section title 
+=========================================================================== */
+.placeholder-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+  padding: 0 15vw;
+  // background-color: #f2f5ff;
+
+  h1 {
+    // font-family: $font-family-Poppins;
+    font-family: Saol Display-Li;
+    font-size: 6vw;
+    // color: #fff;
+    color: $dark-color;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+
+    span {
+      font-size: 3vmax;
+      // font-family: $font-family-Poppins;
+      font-family: Saol Display-Bi;
+      font-weight: 300;
+      // font-style: italic;
+      color: red;
+    }
+  }
+}
+
+/*  Section animation video
+=========================================================================== */
+
+#back {
+  width: 100%;
+  min-height: 100vh;
+  // background-color: #022b88;
+  overflow: hidden;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    // font-family: "Saol Display";
+    // font-family: $font-family-Poppins;
+    font-family: "Playfair Display" serif;
+    line-height: 100px;
+    margin: 80px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  #topup {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    // background-color:red;
+
+    .imgcntnr {
+      width: 15vw;
+      aspect-ratio: 1/1;
+      // height: 250px;
+      background-color: yellow;
+      background-size: cover;
+      background-position: center;
+
+    }
+
+    #one,
+    #sx {
+      width: 12.5vw;
+      height: 25vw;
+      background-color: red;
+    }
+
+    #one {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(0, -50%);
+      background-color: blue;
+    }
+
+    #sx {
+      position: absolute;
+      top: 50%;
+      right: 0%;
+      transform: translate(0, -50%);
+      background-color: blue;
+    }
+
+    #holdr1 {
+      position: absolute;
+      top: 50%;
+      left: 300px;
+      transform: translate(0, -50%);
+
+      #two {
+        width: 18.5vw;
+        height: 20vw;
+      }
+
+      #three {
+        width: 18.5vw;
+        height: 12.5vw;
+      }
+    }
+
+    .holdr div {
+      margin-top: 20px;
+    }
+
+    #holdr2 {
+      position: absolute;
+      top: 50%;
+      right: 300px;
+      transform: translate(0, -50%);
+
+      #fr {
+        width: 18.5vw;
+        height: 12.5vw;
+      }
+
+      #fv {
+        width: 18.5vw;
+        height: 20vw;
+      }
+    }
+
+    #videoplyr {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25vw;
+      min-height: 100vh;
+      overflow: hidden;
+      background-color: green;
+
+      video {
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+
+    #one {
+      background-image: url(../assets/img/ImgR2-4.png);
+    }
+
+    #two {
+      background-image: url(../assets/img/imgR2-1.jpg);
+    }
+
+    #three {
+      background-image: url(../assets/img/imgR2-2.png);
+    }
+
+    #fr {
+      background-image: url(../assets/img/imgL2-6.jpg);
+    }
+
+    #fv {
+      background-image: url(../assets/img/imgL2-4.jpg);
+    }
+
+    #sx {
+      background-image: url(../assets/img/imgL2-1.jpg);
+    }
+  }
+}
+
+/*  Section bioetsport
+=========================================================================== */
+
+//  Voir le CSS sur la page custom.css en index, car souci avec compilation Sass &
+
+/*  Section qui somme nous ?
+=========================================================================== */
+.quisommenous {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: #eee;
+
+  .qsn_titre {
+    h2 {
+      width: 100%;
+      height: auto;
+      // font-family: ;
+      font-size: 40px;
+      font-family: Saol Display;
+      text-align: center;
+      padding: 30px;
+      // background-color: #022b88;
+    }
+  }
+
+  .my__office {
+    width: 80vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    // border: 1px solid;
+
+    .qsn__left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 1 213px;
+      // background-color: #f2f5ff;
+
+      h3 {
+        font-weight: 800;
+        padding: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        width: 100%;
+        height: auto;
+        padding: 16px 100px;
+        text-align: justify;
+      }
+    }
+
+    .qsn__right {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 213px;
+      // background-color: #022b88;
+
+      img {
+        width: 72%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 425px) {
+  .quisommenous {
+    width: 100vw;
+    min-height: auto;
+    display: flex;
+
+    .qsn_titre {
+      h2 {
+        font-size: 30px 0;
+        text-align: center;
+        padding: 20px; // change padding
+      }
+    }
+
+    .my__office {
+      width: 100%;
+      height: auto;
+
+      .qsn__left {
+        width: 100%;
+        height: auto;
+
+        p {
+          padding: 10px;
+        }
+      }
+
+      .qsn__right {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+}
+
+@media all and (max-width: 844px) {
+  .quisommenous {
+    width: 100vw;
+    height: auto;
+    display: flex;
+
+    .qsn_titre {
+      h2 {
+        font-size: 30px 0;
+        text-align: center;
+        padding: 20px; // change padding
+      }
+    }
+
+    .my__office {
+      width: 100%;
+      height: auto;
+
+      .qsn__left {
+        width: 50%;
+        height: auto;
+
+        p {
+          padding: 10px;
+        }
+      }
+
+      .qsn__right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #022b88;
+
+        img {
+          width: 100%;
+          // height: 100%;
+          aspect-ratio: 1/1.6;
+          object-fit: fill;
+        }
+      }
+    }
+  }
+
+}
+
+/*  Section FAQ
+=========================================================================== */
+.faq {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(138, 0, 252);
+}
+
+/*  Section Avis Google
+=========================================================================== */
+
+.avisgoogle {
+  width: 100%;
+  min-height: 50vh;
+  overflow: hidden;
+  background-color: rgb(252, 235, 0);
+}
+
+/*  Section Contact
+=========================================================================== */
+.contact {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  overflow: hidden;
+  position: sticky;
+
+  h2 {
+    font-family: $font-family-Oswald, serif;
+    font-size: 59px;
+    font-weight: 600;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .contactmy {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    // background-color: #eee;
+
+    .cabinetmaps {
+      width: 50%;
+      height: auto;
+      // background-color: blue;
+
+      .cabinet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+
+        h2 {
+          width: fit-content;
+          text-align: center;
+          transition: all 0.3s linear;
+          font-family: $font-family-Oswald;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        p {
+          font-family: $font-family-Poppins;
+          text-align: center;
+        }
+
+        i {
+          padding: 10px 0;
+          margin: auto;
+          font-family: $font-family-Oswald;
+          transition: all 0.2s linear;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .maps {
+        width: 100%;
+        height: auto;
+        height: auto;
+        padding: 20px 0;
+
+        iframe {
+          width: 100%;
+
+          &:hover {
+            box-shadow: 0 2px 15px $color-bleu-marine;
+          }
+
+          // height: auto;
+        }
+      }
+    }
+
+    form {
+      width: 40%;
+      margin: auto;
+      // text-align: left;
+      padding: 20px 0;
+      // background-color: red;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-family: $font-family-Oswald;
+    }
+
+    input:not(#boutonSend),
+    textarea,
+    label {
+      display: block;
+      margin: 5px auto;
+      width: 100%;
+      color: #000;
+    }
+
+    input::placeholder {
+      color: $color-bleu-turquoise;
+      font-family: $font-family-Poppins;
+      font-size: 0.9em;
+      opacity: 0.6;
+    }
+
+    input:not(#boutonSend),
+    textarea {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid $color-bleu-marine;
+      color: #000;
+      font-size: 18px;
+      padding: 5px 5px;
+    }
+
+    textarea {
+      font-size: 12px;
+      padding: 10px 15px;
+    }
+
+    #boutonSend {
+      width: 30%;
+      font-size: 18px;
+      padding: 15px 0;
+      border: none;
+      outline: none;
+      margin-top: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #545557;
+      color: #fff;
+      border-radius: 3px;
+    }
+
+    #boutonSend:hover {
+      background-color: transparent;
+      color: #000;
+      transform: scale(1.05);
+      text-decoration: underline;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 1px solid #20a39d;
+    }
+  }
+
+  #subject {
+    // appearance:none;
+    border: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #545557;
+      color: #fff;
+
+    }
+  }
+
+  #subject:focus {
+    outline: 1px solid #20a39d;
+    border-radius: 5px;
+  }
+}
+
+
+/*  Section avis google
+=========================================================================== */
