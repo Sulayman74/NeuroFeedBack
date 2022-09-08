@@ -569,22 +569,14 @@ header .hamburger path {
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
-.contact .contactmy .cabinetmaps .cabinet a {
-  padding: 8px 0 0 0;
+.contact .contactmy .cabinetmaps .cabinet i {
+  padding: 10px 0;
   margin: auto;
-  color: black;
-  text-decoration: none;
+  font-family: "Oswald", sans-serif;
   transition: all 0.2s linear;
   cursor: pointer;
 }
-.contact .contactmy .cabinetmaps .cabinet a i {
-  color: #022b88;
-  transition: all 0.2s linear;
-}
-.contact .contactmy .cabinetmaps .cabinet a i:hover {
-  color: green;
-}
-.contact .contactmy .cabinetmaps .cabinet a:hover {
+.contact .contactmy .cabinetmaps .cabinet i:hover {
   transform: scale(1.1);
 }
 .contact .contactmy .cabinetmaps .maps {
@@ -645,13 +637,8 @@ header .hamburger path {
   padding: 5px 5px;
 }
 .contact .contactmy textarea {
-  font-size: 1em;
-  padding: 10px;
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-.contact .contactmy #date {
-  cursor: pointer;
+  font-size: 12px;
+  padding: 10px 15px;
 }
 .contact .contactmy #boutonSend {
   width: 30%;
@@ -675,28 +662,22 @@ header .hamburger path {
 .contact .contactmy input:focus,
 .contact .contactmy textarea:focus {
   outline: 1px solid #20a39d;
-  background: rgba(128, 128, 128, 0.759);
 }
-#subject {
+.contact #subject {
   border: none;
   transition: all 0.3s ease;
   padding: 10px;
   font-size: 1.1em;
   border-radius: 5px;
-  cursor: pointer;
 }
-#subject:hover {
+.contact #subject:hover {
   background-color: #545557;
   color: #fff;
 }
-#subject:focus {
+.contact #subject:focus {
   outline: 1px solid #20a39d;
+  border-radius: 5px;
 }
-.suite {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: #eee;
-}
+
 /*  Section avis google
 =========================================================================== *//*# sourceMappingURL=style.css.map */
