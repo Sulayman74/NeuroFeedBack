@@ -1,0 +1,117 @@
+/* .gotopbtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #37a3fe;
+  top: -80px;
+  right: 25px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.6s ease-out;
+  opacity: 0;
+  z-index: 98;
+}
+
+.gotopbtn.active {
+  top: calc(100% - 100px);
+  opacity: 1;
+}
+
+.gotopbtn:hover {
+  background-color: #27aa60;
+}
+
+.gotopbtn::before,
+.gotopbtn::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #37a3fe;
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  animation: waves 2s linear infinite;
+}
+.gotopbtn::after {
+  animation-delay: 1s;
+}
+
+.gotopbtn:hover::before,
+.gotopbtn:hover::after {
+  border-color: #27aa60;
+} */
+
+/* -- Animation 
+======================================================== */
+/* @keyframes waves {
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+} */
+
+
+/* __ btn to up V2
+------------------------------------------------------- */
+.gotopbtn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: #37a3fe;
+  top: -80px;
+  right: 0px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  cursor: pointer;
+  transition: 0.6s ease-out;
+  opacity: 0;
+  z-index: 98;
+}
+
+.gotopbtn.active {
+  top: calc(100% - 100px);
+  opacity: 1;
+}
+
+.gotopbtn:hover {
+  background-color: #27aa60;
+}
+
+/* .gotopbtn::before,
+.gotopbtn::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #37a3fe;
+  position: absolute;
+  left: 0;
+  box-sizing: border-box;
+  animation: waves 2s linear infinite;
+} */
+/* .gotopbtn::after {
+  animation-delay: 1s;
+} */
+
+/* .gotopbtn:hover::before,
+.gotopbtn:hover::after {
+  border-color: #27aa60;
+} */
+
+/* @keyframes waves {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* __  End btn to up V2------------------------------------------------------- */
