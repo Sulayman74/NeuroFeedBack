@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>La séance</title>
+    
+     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+   ></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+ 
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  flex-direction: column;
+}
+ 
+ .titre{
+  font-size: clamp(3.75rem, 6.0268rem + -2.1429vw, 5.625rem);
+  position: absolute;
+  top: 1%;
+  z-index: 200;
+  color: white;
+  padding: 0% 3%;
+  border-radius: 20px;
+  background-color: rgba(171, 173, 174, 0.34);
+ }
+        
+.timeline {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 25px 5px rgba(0, 0, 0, .2);
+}
+.timeline .swiper-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.timeline .swiper-wrapper {
+  transition: 2s cubic-bezier(0.68, -0.4, 0.27, 1.34) 0.2s;
+}
+.timeline .swiper-slide {
+  position: relative;
+  color: rgb(38, 88, 182);
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+    
+}
+.timeline .swiper-slide::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: -115%;
+  bottom: -10%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  box-shadow: -230px 0 150px 60vw rgba(0, 0, 0, .7);
+  border-radius: 100%;
+}
+.timeline .swiper-slide-content {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  max-width: 310px;
+  right: 50%;
+  top: 13%;
+  transform: translate(50%, 0);
+  font-size: 12px;
+  z-index: 2;
+}
+.timeline .swiper-slide .timeline-year {
+  display: block;  
+  font-size: 22px !important;
+  margin-bottom: 50px;
+  transform: translate3d(20px, 0, 0);
+  /* color: rgb(5, 83, 200); */
+  color: rgb(7, 7, 7);
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0;
+  transition: 0.2s ease 0.4s;
+}
+.timeline .swiper-slide .timeline-title {
+  font-weight: 800;
+  font-size: 54px !important;
+  margin: 0 0 30px;
+  color: rgb(38, 88, 182);
+  /* text-shadow: 3px 1px 2px rgb(254, 254, 254); */
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+  transition: 0.2s ease 0.5s;
+}
+.timeline .swiper-slide .timeline-text {
+  line-height: 1.8;
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+  transition: 0.2s ease 0.6s;
+  font-size: clamp(1.25rem, 5.1786rem + -5.7143vw, 3.75rem);
+    width: 540px;
+}
+.timeline .swiper-slide-active .timeline-year {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s ease 1.6s;
+     
+}
+.timeline .swiper-slide-active .timeline-title {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s ease 1.7s;
+}
+.timeline .swiper-slide-active .timeline-text {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s ease 1.8s;
+  width: 540px;
+  /* border: 2px solid white; */
+  border-radius: 20px;
+  padding: 15px;
+  background-color: rgba(203, 203, 203, 0.452);
+}
+.timeline .swiper-pagination {
+  right: 15% !important;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  z-index: 1;
+}
+.timeline .swiper-pagination::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, .2);
+}
+.timeline .swiper-pagination-bullet {
+  width: auto;
+  height: auto;
+  text-align: center;
+  opacity: 1;
+  background: transparent;
+  color: white;
+  margin: 15px 0 !important;
+  position: relative;
+}
+.timeline .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color:white;
+  transform: scale(0);
+  transition: 0.2s;
+}
+.timeline .swiper-pagination-bullet-active {
+  color: white;
+  scale: 1.4;
+  transition: all 0.4s;
+}
+.timeline .swiper-pagination-bullet-active::before {
+  transform: scale(1);
+}
+.timeline .swiper-button-next, .timeline .swiper-button-prev {
+  background-size: 20px 20px;
+  top: 15%;
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  z-index: 2;
+  transition: 0.2s;
+}
+.timeline .swiper-button-prev {
+  left: 8%;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+}
+.timeline .swiper-button-prev:hover {
+  transform: translateX(-3px);
+}
+.timeline .swiper-button-next {
+  right: 8%;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23d4a024'%2F%3E%3C%2Fsvg%3E");
+}
+.timeline .swiper-button-next:hover {
+  transform: translateX(3px);
+}
+
+
+
+@media screen and (min-width: 768px) {
+  /* .timeline .swiper-slide .timeline-text{ */
+    /* font-size: 20px; */
+  /* } */
+  .timeline .swiper-slide::after {
+    right: -30%;
+    bottom: -8%;
+    width: 240px;
+    height: 50%;
+    box-shadow: -230px 0 150px 50vw rgba(0, 0, 0, .7);
+  }
+  .timeline .swiper-slide-content {
+    right: 30%;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 310px;
+    font-size: 11px;
+    text-align: right;
+  }
+  .timeline .swiper-slide .timeline-year {
+    margin-bottom: 0;
+    font-size: 32px;
+  }
+  .timeline .swiper-slide .timeline-title {
+    font-size: 46px;
+    margin: 0;
+  }
+  .timeline .swiper-pagination {
+    display: flex;
+  }
+  .timeline .swiper-button-prev {
+    top: 15%;
+    left: auto;
+    right: 15%;
+    transform: rotate(90deg) translate(0, 10px);
+  }
+  .timeline .swiper-button-prev:hover {
+    transform: rotate(90deg) translate(-3px, 10px);
+  }
+  .timeline .swiper-button-next {
+    top: auto;
+    bottom: 15%;
+    right: 15%;
+    transform: rotate(90deg) translate(0, 10px);
+  }
+  .timeline .swiper-button-next:hover {
+    transform: rotate(90deg) translate(3px, 10px);
+  }
+}
+
+@media screen and (min-width: 100px) {
+  .timeline .swiper-slide-content {
+    right: 67%;
+    top:50%;
+  }
+  .timeline .swiper-slide .timeline-year {
+        font-size: 22px;
+  }
+  .timeline .swiper-pagination{
+    font-size: 30px;
+  }
+  .timeline .swiper-slide::after{
+    right: -30%;
+    bottom: -12%;
+    width: 200px;
+    height: 100%;
+        box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, 0.447);
+  }
+  /* .timeline .swiper-slide .timeline-text{ */
+    /* font-size: 30px; */
+  /* } */
+  .titre{
+    top: 7%;
+  }
+}
+
+@media screen and (min-width: 1324px) {
+  .timeline .swiper-slide::after {
+    right: -20%;
+    bottom: -12%;
+    width: 240px;
+    height: 50%;
+    box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, .7);
+  }
+  .timeline .swiper-slide-content {
+    right: 45%;
+  }
+  /* .timeline .swiper-slide .timeline-text{ */
+    /* font-size: 20px; */
+  /* } */
+}
+@media screen and (min-width: 768px){
+  /* .timeline .swiper-slide .timeline-text{ */
+    /* font-size: 20px; */
+  /* } */
+}
+
+    
+    </style>
+    
+</head>
+<body>
+  <div class="container">
+      <div class="titre">CONTENU D'UNE SEANCE</div>
+      <div class="timeline">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url(https://neurofeedbackservicesny.com//wp-content/uploads/2017/12/Inital-Neurofeedback-Consultation.jpg)" data-year="Présentation">
+          <div class="swiper-slide-content"><span class="timeline-year">Présentation de la séance</span>
+            <h4 class="timeline-title">PRESENTATION </h4>
+            <p class="timeline-text"> Le déroulement des séances est simple. Vous êtes installé confortablement dans un fauteuil,
+              devant un écran. Vous avez le choix d’écouter une musique ou de regarder un film / dessin
+              animé.
+
+              Il n’y a pas d’effort à faire, ni concentration ou contrôle particulier…
+              au contraire vous passez un bon moment, en mode non cognitif, pendant que votre cerveau se
+              transforme et adopte un fonctionnement plus souple et mieux adapté.</p>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url(https://media.istockphoto.com/photos/young-teenage-girl-and-child-therapist-during-eeg-neurofeedback-picture-id1130450333?k=20&m=1130450333&s=612x612&w=0&h=oUBESCwJoeqswZk566u-PQrWKT48bSRRBB44mZFwCF4=)" data-year="Installation">
+          <div class="swiper-slide-content"><span class="timeline-year">Mise en place</span>
+            <h3 class="timeline-title">INSTALLATION </h3>
+            <p class="timeline-text">Des capteurs posés sur votre crâne mesurent l’activité électrique de votre cerveau pendant la
+              séance et envoient les informations au système. <br>
+
+              <span class="rectangle">Le système les analyse</span> et renvoie en temps réel à votre cerveau une information sur
+              son propre fonctionnement. <br> Ainsi à chaque variabilité d’activité autrement appelée «
+              turbulence
+              », une brève interruption de son intervient et est captée par l’oreille = c’est ce mécanisme qui
+              <span class="rectangle">aide votre cerveau à se ré-organiser</p>
+          </div>
+        </div>
+       
+        <div class="swiper-slide" style="background-image: url(https://annegobled.com/wp-content/uploads/2021/10/location-neurofeedback-dynamique.jpg)" data-year="Détente">
+          <div class="swiper-slide-content"><span class="timeline-year">Seance</span>
+            <h4 class="timeline-title">DETENTE</h4>
+            <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url(https://img.freepik.com/photos-gratuite/medecin-suivant-evolution-du-patient-pendant-test-du-casque-neurologie-centre-neorologie_482257-31620.jpg?w=2000)" data-year="Analyse">
+          <div class="swiper-slide-content"><span class="timeline-year">Analyse</span>
+            <h4 class="timeline-title">ANALYSE</h4>
+            <p class="timeline-text">Le système ne donne aucun ordre, ni ne génére une stimulation, <span>c’est un simple retour
+              d’information</span> que votre cerveau va prendre en compte pour se ré-organiser par lui-même et se
+          ré-équilibre pour mieux fonctionner.
+
+          Vous gagnez ainsi en <strong>apaisement</strong>, mieux être, plus de <strong>confiance</strong> en vous, <strong>un regain d’énergie</strong>,
+          d’optimisme, de projection vers l’avenir, un meilleur sommeil… en un mot une meilleure qualité
+          de vie.</p>
+          </div>
+        </div>
+        <div class="swiper-slide" style="background-image: url(https://static.lexpress.fr/medias_9946/w_930,h_404,c_crop,x_0,y_25/w_1000,h_563,c_fill,g_north/v1411555114/neurofeedback_5092408.jpg)" data-year="compte-rendu">
+          <div class="swiper-slide-content"><span class="timeline-year">Compte</span>
+            <h4 class="timeline-title">FEEDBACK</h4>
+            <p class="timeline-text">Le compte rendu dera consectetur adipscing elit, sed do eisumod tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script>
+    $(function(){
+   
+var timelineSwiper = new Swiper ('.timeline .swiper-container', {
+  direction: 'vertical',
+  loop: false,
+  speed: 1600,
+  pagination: '.swiper-pagination',
+  paginationBulletRender: function (swiper, index, className) {
+    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+    return '<span class="' + className + '">' + year + '</span>';
+  },
+  paginationClickable: true,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  breakpoints: {
+    768: {
+      direction: 'horizontal',
+    }
+  }
+});    
+    
+             
+    });
+</script>
+</body>
+</html>

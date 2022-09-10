@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section-ka {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-ka h1 {
+  margin-top: 40px;
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgb(27, 150, 232);
+  transition: all .5s ease-in-out;
+}
+
+.section-ka h1:after{
+  content: 'Frequently Asked Questions';
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+ text-decoration: overline;
+}
+
+.container-1 {
+  display: block;
+  float: left;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+.container-2 {
+  display: block;
+  float: right;
+  width: 50%;
+  padding: 20px 40px;
+}
+
+.faq {
+  max-width: 100%;
+  margin-bottom: 50px;
+  padding: 25px 30px;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px 5px #aaa;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  color: rgb(27, 150, 232);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.question h2 {
+  font-size: 20px;
+  color: rgb(27, 150, 232);
+  transition: all .5s ease-in-out;
+}
+
+.question i {
+  font-size: 24px;
+  color: rgb(27, 150, 232);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.reponse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}
+
+.reponse p {
+  padding-top: 20px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.faq.active .reponse {
+  max-height: 350px;
+}
+.faq.active .fa {
+  transform: rotate(90deg);
+  scale: 1.3;
+  color: white;
+  transition: all .3s ease-in-out;
+}
+.faq.active .question h2 {
+  color: white;
+  transition: all .5s ease-in-out;
+}
+.faq.active  {
+  background-color: rgb(27, 150, 232);
+  color: white;
+  transition: all .5s ease-in-out;
+}
+
+@media screen and (max-width: 850px) {
+
+  .section-ka {
+    display: table;
+  }
+
+  .container-1, .container-2 {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .question h2 {
+    font-size: 17px;
+  }
+
+  .reponse p {
+    font-size: 14px;
+  }
+
+}
+
+#particles-js {
+  width: 100%;
+  /* add width*/
+  height: 100vh;
+  /*  add display */
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  /* border: 1px solid yellow;  */
+  /* guide repere */
+}
