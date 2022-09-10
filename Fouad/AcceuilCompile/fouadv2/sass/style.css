@@ -39,7 +39,7 @@ html ::-webkit-scrollbar {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 html ::-webkit-scrollbar-thumb {
-  background: #FF0000;
+  background: #ff0000;
 }
 
 /*  header
@@ -442,22 +442,29 @@ header .hamburger path {
 =========================================================================== */
 /*  Section qui somme nous ?
 =========================================================================== */
-.quisommenous {
+section .quisommenous {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(../assets/img/bg-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.quisommenous .qsn_titre h2 {
+section .quisommenous .qsn_titre h2 {
   width: 100%;
   height: auto;
   font-size: 40px;
   font-family: Saol Display;
   text-align: center;
-  padding: 30px;
+  color: #fff;
+  padding: 2px 20px;
+  border-radius: 3px;
+  background-color: transparent;
+  margin: 10px 0 50px 0;
 }
-.quisommenous .my__office {
+section .quisommenous .my__office {
   width: 80vw;
   height: auto;
   display: flex;
@@ -465,68 +472,72 @@ header .hamburger path {
   padding: 10px;
   flex-wrap: wrap;
 }
-.quisommenous .my__office .qsn__left {
-  width: 50%;
+section .quisommenous .my__office .qsn__left {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1 1 213px;
+  background-color: rgba(255, 255, 255, 0.707);
+  padding: 10px 20px;
+  border-radius: 3px;
+  box-shadow: 2px 3px 10px black;
 }
-.quisommenous .my__office .qsn__left h3 {
+section .quisommenous .my__office .qsn__left h3 {
   font-weight: 800;
   padding: 10px;
 }
-.quisommenous .my__office .qsn__left p {
+section .quisommenous .my__office .qsn__left p {
   font-size: 14px;
   width: 100%;
   height: auto;
-  padding: 16px 100px;
   text-align: justify;
 }
-.quisommenous .my__office .qsn__right {
+section .quisommenous .my__office .qsn__right {
   width: 50%;
-  height: 100%;
+  height: 62vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1 1 213px;
 }
-.quisommenous .my__office .qsn__right img {
-  width: 72%;
+section .quisommenous .my__office .qsn__right img {
+  width: 80%;
   height: auto;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
+  box-shadow: 2px 3px 10px black;
 }
-
 @media all and (max-width: 425px) {
-  .quisommenous {
-    width: 100vw;
+  section {
     min-height: auto;
     display: flex;
   }
-  .quisommenous .qsn_titre h2 {
+  section .quisommenous {
+    width: 100vw;
+  }
+  section .qsn_titre h2 {
     font-size: 30px 0;
     text-align: center;
     padding: 20px;
   }
-  .quisommenous .my__office {
+  section .my__office {
     width: 100%;
     height: auto;
   }
-  .quisommenous .my__office .qsn__left {
+  section .my__office .qsn__left {
     width: 100%;
     height: auto;
   }
-  .quisommenous .my__office .qsn__left p {
+  section .my__office .qsn__left p {
     padding: 10px;
   }
-  .quisommenous .my__office .qsn__right {
+  section .my__office .qsn__right {
     width: 100%;
     height: 100%;
   }
-  .quisommenous .my__office .qsn__right img {
+  section .my__office .qsn__right img {
     width: 100%;
     height: auto;
     aspect-ratio: 1/1;
@@ -534,6 +545,7 @@ header .hamburger path {
        object-fit: cover;
   }
 }
+
 @media all and (max-width: 844px) {
   .quisommenous {
     width: 100vw;
@@ -541,7 +553,7 @@ header .hamburger path {
     display: flex;
   }
   .quisommenous .qsn_titre h2 {
-    font-size: 30px 0;
+    font-size: 30px;
     text-align: center;
     padding: 20px;
   }
@@ -591,168 +603,5 @@ header .hamburger path {
 
 /*  Section Contact
 =========================================================================== */
-.contact {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-  overflow: hidden;
-  position: -webkit-sticky;
-  position: sticky;
-}
-.contact h2 {
-  font-family: "Oswald", sans-serif, serif;
-  font-size: 59px;
-  font-weight: 600;
-  padding-top: 20px;
-  text-align: center;
-}
-.contact .contactmy {
-  width: 80%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.contact .contactmy .cabinetmaps {
-  width: 50%;
-  height: auto;
-}
-.contact .contactmy .cabinetmaps .cabinet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-}
-.contact .contactmy .cabinetmaps .cabinet h2 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-align: center;
-  transition: all 0.3s linear;
-  font-family: "Oswald", sans-serif;
-}
-.contact .contactmy .cabinetmaps .cabinet h2:hover {
-  text-decoration: underline;
-}
-.contact .contactmy .cabinetmaps .cabinet p {
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-}
-.contact .contactmy .cabinetmaps .cabinet i {
-  padding: 10px 0;
-  margin: auto;
-  font-family: "Oswald", sans-serif;
-  transition: all 0.2s linear;
-  cursor: pointer;
-}
-.contact .contactmy .cabinetmaps .cabinet i:hover {
-  transform: scale(1.1);
-}
-.contact .contactmy .cabinetmaps .maps {
-  width: 100%;
-  height: auto;
-  height: auto;
-  padding: 20px 0;
-}
-.contact .contactmy .cabinetmaps .maps iframe {
-  width: 100%;
-}
-.contact .contactmy .cabinetmaps .maps iframe:hover {
-  box-shadow: 0 2px 15px #022b88;
-}
-.contact .contactmy form {
-  width: 40%;
-  margin: auto;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: column;
-}
-.contact .contactmy label {
-  font-family: "Oswald", sans-serif;
-}
-.contact .contactmy input:not(#boutonSend),
-.contact .contactmy textarea,
-.contact .contactmy label {
-  display: block;
-  margin: 5px auto;
-  width: 100%;
-  color: #000;
-}
-.contact .contactmy input::-moz-placeholder {
-  color: #39c7ce;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9em;
-  opacity: 0.6;
-}
-.contact .contactmy input:-ms-input-placeholder {
-  color: #39c7ce;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9em;
-  opacity: 0.6;
-}
-.contact .contactmy input::placeholder {
-  color: #39c7ce;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9em;
-  opacity: 0.6;
-}
-.contact .contactmy input:not(#boutonSend),
-.contact .contactmy textarea {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px solid #022b88;
-  color: #000;
-  font-size: 18px;
-  padding: 5px 5px;
-}
-.contact .contactmy textarea {
-  font-size: 12px;
-  padding: 10px 15px;
-}
-.contact .contactmy #boutonSend {
-  width: 30%;
-  font-size: 18px;
-  padding: 15px 0;
-  border: none;
-  outline: none;
-  margin-top: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: #545557;
-  color: #fff;
-  border-radius: 3px;
-}
-.contact .contactmy #boutonSend:hover {
-  background-color: transparent;
-  color: #000;
-  transform: scale(1.05);
-  text-decoration: underline;
-}
-.contact .contactmy input:focus,
-.contact .contactmy textarea:focus {
-  outline: 1px solid #20a39d;
-}
-.contact #subject {
-  border: none;
-  transition: all 0.3s ease;
-  padding: 10px;
-  font-size: 1.1em;
-  border-radius: 5px;
-}
-.contact #subject:hover {
-  background-color: #545557;
-  color: #fff;
-}
-.contact #subject:focus {
-  outline: 1px solid #20a39d;
-  border-radius: 5px;
-}
-
 /*  Section avis google
 =========================================================================== *//*# sourceMappingURL=style.css.map */
