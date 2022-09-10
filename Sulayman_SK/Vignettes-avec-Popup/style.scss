@@ -37,7 +37,7 @@
   src: url(/fonts/Oswald/Oswald-SemiBold.ttf) format("truetype");
 }
 @font-face {
-  font-family: "Oswald Variable";
+  font-family: "" Oswald Variable "";
   src: url(/fonts/Oswald/Oswald-VariableFont_wght.ttf) format("truetype");
 }
 
@@ -50,30 +50,29 @@ $dark-color-lighten: #f2f5ff;
   font-family: "Oswald Bold ";
   src: url(/fonts/Oswald/Oswald-Bold.ttf) format(truetype);
 }
-// @font-face {
-// font-family: "Oswald ";
-// src: url(/Sulayman/fonts/Oswald/Oswald-Bold.ttf) format(truetype);
-// }
-//
-//   src: url(/Sulayman/fonts/Poppins/Poppins-BlackItalic.ttf) format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-BoldItalic.ttf) format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-ExtraBold.ttf) format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-ExtraBoldItalic.ttf)
-//     format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-ExtraLight.ttf) format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-ExtraLightItalic.ttf)
-//     format("truetype");
+@font-face {
+  font-family: "Oswald ";
+  src: url(/Sulayman/fonts/Oswald/Oswald-Bold.ttf) format(truetype);
 
-//
-//   src: url(/Sulayman/fonts/Poppins/Poppins-LightItalic.ttf) format("truetype");
-//
-//   src: url(/Sulayman/fonts/Poppins/Poppins-MediumItalic.ttf) format("truetype");
-//
-//   src: url(/Sulayman/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
-//   src: url(/Sulayman/fonts/Poppins/Poppins-SemiBoldItalic.ttf)
-//     format("truetype");
-//
-//   src: url(/Sulayman/fonts/Poppins/Poppins-ThinItalic.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-BlackItalic.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-BoldItalic.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-ExtraBold.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-ExtraBoldItalic.ttf)
+    format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-ExtraLight.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-ExtraLightItalic.ttf)
+    format("truetype");
+
+  src: url(/Sulayman/fonts/Poppins/Poppins-LightItalic.ttf) format("truetype");
+
+  src: url(/Sulayman/fonts/Poppins/Poppins-MediumItalic.ttf) format("truetype");
+
+  src: url(/Sulayman/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+  src: url(/Sulayman/fonts/Poppins/Poppins-SemiBoldItalic.ttf)
+    format("truetype");
+
+  src: url(/Sulayman/fonts/Poppins/Poppins-ThinItalic.ttf) format("truetype");
+}
 
 * {
   margin: 0;
@@ -87,11 +86,11 @@ header {
 }
 
 main {
-  background-image: url(/Vignettes-avec-Popup/assets/img/more-protection.jpg);
+  background-image: url(/assets/jerene-nov-2020-mental_health-123rf.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 // ** la grande section où les vignettes apparaissent
 .vignette {
@@ -168,25 +167,32 @@ main {
       }
       h2 {
         padding: 10px;
-        font-size: 1.5em;
+        font-size: 1.35em;
         color: black;
-        font-family: "Poppins Regular";
+        font-family: "Poppins Medium";
+        transition: all 0.3s linear;
+        &:hover {
+          color: beige;
+          // text-decoration: underline;
+          transform: scale(1.01);
+        }
       }
       .Apercu {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        line-height: 1.2em;
+        line-height: 1.05em;
+
         // background-color: orange;
 
         padding: 0 7px;
         h3 {
-          font-size: 1em;
+          font-size: 0.9em;
           font-family: "Poppins Regular";
-          color: white;
-          opacity: 0.8;
+          color: black;
+          opacity: 0.7;
           // padding: 0;
-          margin: 7px 5px 0;
+          margin: 4px 5px 0;
           text-transform: capitalize;
         }
       }
