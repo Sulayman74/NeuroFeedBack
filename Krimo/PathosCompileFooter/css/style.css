@@ -87,10 +87,7 @@
   font-family: "Oswald";
   font-size: 4em;
   z-index: 1;
-  color: white;
-  background-color: rgba(128, 128, 128, 0.61);
-  border-radius: 20px;
-  padding: 0px 20px;
+  color: green;
 }
 .vignette .card {
   margin: 50px;
@@ -99,7 +96,6 @@
   min-width: 300px;
   height: 190px;
   background: #91cfca;
-  border: 1px solid #39c7ce;
   border-radius: 15px;
   box-shadow: 2px 1px 8px whitesmoke;
   transition: all 0.3s linear;
@@ -107,10 +103,12 @@
 .vignette .card:hover .ImgBox {
   width: 200px;
   height: 160px;
+  box-shadow: 2px 2px 5px whitesmoke;
 }
 .vignette .card:hover {
   height: 390px;
   background: rgba(0, 71, 252, 0.467);
+  box-shadow: 2px 1px 8px black;
 }
 .vignette .card .ImgBox {
   position: absolute;
@@ -121,7 +119,7 @@
   top: -70px;
   transform: translateX(-50%);
   border-radius: 15px;
-  box-shadow: 1px 2px 10px #39c7ce;
+  box-shadow: 2px 2px 5px #39c7ce;
   overflow: hidden;
   transition: all 0.3s linear;
 }

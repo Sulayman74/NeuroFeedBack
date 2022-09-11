@@ -125,6 +125,7 @@ $dark-color-lighten: #f2f5ff;
     &:hover .ImgBox {
       width: 200px;
       height: 160px;
+      box-shadow: 2px 2px 5px whitesmoke;
     }
     margin: 50px;
     position: relative;
@@ -132,7 +133,7 @@ $dark-color-lighten: #f2f5ff;
     min-width: 300px;
     height: 190px;
     background: #91cfca;
-    border: 1px solid #39c7ce;
+    // border: 1px solid #39c7ce;
     border-radius: 15px;
     box-shadow: 2px 1px 8px whitesmoke;
     transition: all 0.3s linear;
@@ -140,6 +141,7 @@ $dark-color-lighten: #f2f5ff;
       // ** agrandissement de la carte
       height: 390px;
       background: rgba(0, 71, 252, 0.467);
+      box-shadow: 2px 1px 8px black;
     }
     .ImgBox {
       // ** contenant de l'image
@@ -151,7 +153,7 @@ $dark-color-lighten: #f2f5ff;
       top: -70px;
       transform: translateX(-50%);
       border-radius: 15px;
-      box-shadow: 1px 2px 10px #39c7ce;
+      box-shadow: 2px 2px 5px #39c7ce;
       overflow: hidden;
       transition: all 0.3s linear;
 

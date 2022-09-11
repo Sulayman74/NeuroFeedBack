@@ -7,9 +7,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/carrousel.css" />
+    <!-- <link rel="stylesheet" href="scss/style.css" /> -->
     <link rel="stylesheet" href="/css/style.css" />
       <!-- Font Awesome Icons -->
-      <link rel="stylesheet" href="./css2/all.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="./css2/all.css">
 
 
       <!-- --------- Owl-Carousel ------------------->
@@ -277,8 +281,9 @@
 
     <!-- ** Partie Vignette commemcement SK -->
 
-
+<!-- ** container des vignettes -->
     <section class="SK vignette">
+      <!-- TODO structure de la carte -->
                       <div class="card" onclick="">
                         
                         <div class="ImgBox">
@@ -286,14 +291,22 @@
                         </div>
                         <div class="contenu">
                           <div class="contenant">
+
+                            <!-- ? Titre de la carte -->
+                            
                             <h2>Accouphenes</h2>
                             <div class="Apercu">
                               
+<!-- ? Petit descriptif de la carte -->
+
                 <h3>traumatisme auditif,</h3>
                 <h3>bourdonnement,</h3>
                 <h3>sifflement,</h3>
                 <h3>bruits fantomes</h3>
               </div>
+
+              <!-- ** les boutons de la carte -->
+
               <div class="Btns">
                 <button data-modal-target="#modal" class="btnChange">
                   En Savoir +
@@ -303,6 +316,9 @@
             </div>
           </div>
         </div>
+
+        <!-- ** la structure des pop ups et de leur contenu -->
+
         <div class="modal" id="modal">
           <div class="popUpEnTete">
             <div class="titre">Accouphenes</div>
@@ -337,10 +353,13 @@
               bruits parasites en leur apprenant à intervenir directement sur
               l’activité du cortex auditif...
             </p>
-
+<!-- ** Deuxième bouton à l'interieur du pop up -->
              <a href="formulaire.html"><button class="btnOn">Prendre RDV</button></a>
           </div>
         </div>
+
+
+<!-- ! toutes les cartes ont la même strucutre que la toute première  -->
 
         <div class="card" onclick="">
           <div class="ImgBox">
@@ -851,8 +870,11 @@
 
    <!-- ** fin des Vignettes SK-->
 
-   
+   <!-- TODO la div qui permet de sortir des pop up voir en JS -->
     <div id="overlay"></div>
+<!-- TODO la div qui permet de sortir des pop up voir en JS -->
+
+<!-- ** Footer AK début -->
 
     <footer class="footer">
       <div class="container">
@@ -862,8 +884,10 @@
               <p>137 route des chapuisats</p>
               <p>Bat B Etage 4</p>
               <p>1357 Genève</p>
-              <p>Tel ; +41 789 254 698</p>
-              <p>Mail: neurofeeback.gva@gmail.com</p>
+              <!-- <p>Tel ; +41 789 254 698</p> -->
+              <p><a href="tel:+41789456123"><span id="tel"><i class="fa-solid fa-mobile"></i></span>+41 789 254 698</a></p>
+              <!-- <p>Mail: neurofeeback.gva@gmail.com</p> -->
+              <p><a href = "mailto:neurofeedback@gmail.ch"><span id="mail" ><i class="fa-regular fa-envelope"></i></span> neurofeeback.gva@gmail.com</a></p>
           </div>
           <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
               <h2>Newsletter</h2>
@@ -906,6 +930,9 @@
           <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
       </div>
   </footer>
+
+<!-- ** Footer AK  Fin -->
+
 <!-- ! Chargement des scripts -->
 
     <script src="assetsKrimo/js/app.js"></script>
