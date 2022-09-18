@@ -20,13 +20,17 @@
   padding: 0% 3%;
   border-radius: 20px;
   background-color: rgba(171, 173, 174, 0.34);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .timeline {
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 5px 25px 5px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.2);
 }
 
 .timeline .swiper-container {
@@ -46,7 +50,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
 }
 
 .timeline .swiper-slide::after {
@@ -57,8 +60,8 @@
   bottom: -10%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .7);
-  box-shadow: -230px 0 150px 60vw rgba(0, 0, 0, .7);
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: -230px 0 150px 60vw rgba(0, 0, 0, 0.7);
   border-radius: 100%;
 }
 
@@ -154,7 +157,7 @@
   top: 0;
   height: 100%;
   width: 1px;
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .timeline .swiper-pagination-bullet {
@@ -220,24 +223,22 @@
   transform: translateX(3px);
 }
 
-
-
 @media screen and (min-width: 768px) {
-  .timeline .swiper-slide-active .timeline-text{
+  .timeline .swiper-slide-active .timeline-text {
     width: 750px;
     line-height: 1.5;
-   transform: translateX(-100px);
+    transform: translateX(-100px);
   }
-.titre{
-  font-size: 2rem;
-  top: 410%;
-}
+  .titre {
+    font-size: 2rem;
+    top: 410%;
+  }
   .timeline .swiper-slide::after {
     right: -30%;
     bottom: -8%;
     width: 240px;
     height: 50%;
-    box-shadow: -230px 0 150px 50vw rgba(0, 0, 0, .7);
+    box-shadow: -230px 0 150px 50vw rgba(0, 0, 0, 0.7);
   }
 
   .timeline .swiper-slide-content {
@@ -297,7 +298,6 @@
   .timeline .swiper-slide-content {
     right: 67%;
     top: 30%;
-
   }
 
   .timeline .swiper-slide .timeline-year {
@@ -311,7 +311,6 @@
   .timeline .swiper-pagination {
     font-size: 30px;
   }
-
 
   .titre {
     top: 472%;
@@ -340,7 +339,7 @@
     bottom: -12%;
     width: 240px;
     height: 50%;
-    box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, .7);
+    box-shadow: -230px 0 150px 39vw rgba(0, 0, 0, 0.7);
   }
 
   .timeline .swiper-slide-content {
@@ -349,13 +348,11 @@
   }
 
   .timeline .swiper-slide-active .timeline-text {
-
     background-color: rgba(203, 203, 203, 0.152);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
 }
-
 
 /* -----------------------QUI SUIS JE --------------- */
 .quisuisje {
@@ -372,7 +369,7 @@
   left: -15%;
   z-index: 2;
   scale: 2;
-  transition: all 1s ease .4s;
+  transition: all 1s ease 0.4s;
 }
 
 .hello img.active {
@@ -403,7 +400,9 @@
   padding: 0 5%;
   /* font-size: 3vw; */
   margin-bottom: 5%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .top-section {
@@ -445,14 +444,14 @@
   margin: 10rem auto;
 }
 
-.bottom-section>h3 {
+.bottom-section > h3 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
   color: #fff;
 }
 
-.bottom-section>p {
+.bottom-section > p {
   margin-bottom: 30px;
   color: #fff;
 }
@@ -495,5 +494,4 @@
     height: 100px;
     top: 560%;
   }
-
 }
