@@ -84,7 +84,7 @@ $dark-color-lighten: #f2f5ff;
 // ** la grande section où les vignettes apparaissent
 .vignette {
   padding-top: 10%;
-  background-image: url(assets/img/bgsport.jpg);
+  background-image: url(../assets/img/bgsport.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -397,11 +397,12 @@ $dark-color-lighten: #f2f5ff;
   z-index: 10;
   top: 50%;
   left: 50%;
-  color: white;
+  color: rgb(14, 42, 221);
   font-family: "Poppins Regular";
   box-shadow: 1px 2px 5px #39c7ce;
   border-radius: 5px;
-  background-color: rgba(12, 2, 2, 0.713);
+  background-color: rgba(19, 67, 128, 0.713);
+  backdrop-filter: blur(20px);
   transform: translate(-50%, -50%) scale(0);
   transition: all 0.2s ease-in-out;
   width: 700px;
@@ -453,7 +454,7 @@ $dark-color-lighten: #f2f5ff;
   .contenu-popup {
     padding: 10px 15px;
     font-family: "Oswald";
-    font-size: 1.1em;
+    font-size: 1.15em;
     line-height: 1.5em;
     text-align: justify;
     display: flex;
@@ -500,10 +501,16 @@ $dark-color-lighten: #f2f5ff;
   &.active {
     pointer-events: all;
     opacity: 1;
-    background-image: url(assets/img/Michael-Jordan-ipad.jpg);
+    background-image: url(/SportCompile/assets/img/Michael-Jordan-ipad.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     filter: blur(3px);
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .vignette .card {
+    background-color: darkred;
   }
 }
