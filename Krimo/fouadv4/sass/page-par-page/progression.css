@@ -1,0 +1,9 @@
+#progression {
+  width: 0;
+  height: 5px;
+  position: -ms-page;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}

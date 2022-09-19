@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#avisgoogle {
+  display: grid;
+  height: 50%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.slider {
+  max-width: 1150px;
+  /* overflow: hidden; */
+  display: flex;
+  overflow: hidden;
+}
+
+.card__Slider {
+  cursor: pointer;
+  padding-bottom: 10px;
+  /* backdrop-filter: blur(25px); */
+  /* border-bottom: solid  rgb(22, 2, 136); */
+  box-shadow: 5px 7px 4px rgba(53, 121, 248, 0.678);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owl-stage {
+  height: 800px;
+  padding-top: 50px;
+}
+
+.slider:hover .card__Slider:hover {
+  color: rgb(255, 253, 253);
+  background-color: rgba(53, 121, 248, 0.678);
+  transform: translateY(-20px);
+  box-shadow: 5px 7px 4px rgba(3, 19, 47, 0.678);
+}
+
+.card__Slider:hover > .content__Slider > .subtitle__Slider {
+  color: rgb(12, 3, 141);
+}
+.card__Slider:hover > .content__Slider > .title__Slider:after {
+  background: rgb(12, 3, 141);
+}
+
+.title__Slider {
+  padding: 15px;
+  position: relative;
+}
+.title__Slider::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  border-radius: 10px;
+  background: rgb(173, 171, 171);
+  left: calc(50% - 50px);
+  top: 50px;
+}
+
+.slider .card__Slider {
+  background: #fff;
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 20px;
+  line-height: 25px;
+  transition: all 0.2s ease-in;
+}
+
+.slider .card__Slider .image__Slider img {
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 20px;
+  border: solid white;
+}
+
+.slider .card__Slider .content__Slider {
+  padding: 10px 20px;
+}
+
+.card__Slider .content__Slider .title__Slider {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.card__Slider .content__Slider .subtitle__Slider {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(241, 218, 7);
+}
+
+.card__Slider .content__Slider p {
+  text-align: justify;
+  /* margin: 20px 15px; */
+}
+
+@media screen and (min-width: 700px) and (max-width:1401px) {
+  .card__Slider .content__Slider .title__Slider {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .card__Slider .content__Slider p {
+  font-size: 15px;
+  }
+  .slider .card__Slider .image__Slider img {
+    height: 90px;
+    width: 90px;
+  }
+}
